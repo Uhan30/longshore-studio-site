@@ -163,4 +163,11 @@ footer{padding:34px 0;background:var(--pine-2);color:#C9C3B0;font-size:13.5px;}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}html{scroll-behavior:auto;}.rise{opacity:1;transform:none;}.wave-anim{animation:none!important;}}
 
 .wave-anim{animation:wave-drift 22s linear infinite;}
+
+/* cookie consent bar */
+.cookie-bar{position:fixed;left:16px;right:16px;bottom:16px;z-index:200;max-width:480px;margin:0 auto;background:var(--pine);color:var(--sand);border-radius:14px;padding:20px 22px;box-shadow:0 12px 32px rgba(0,0,0,.28);display:flex;flex-direction:column;gap:14px;}
+.cookie-bar p{margin:0;font-size:13.5px;line-height:1.5;color:var(--sand);opacity:.92;}
+.cookie-actions{display:flex;gap:10px;}
+.cookie-actions .btn-secondary{border-color:rgba(237,230,211,.5);color:var(--sand);}
+.cookie-actions .btn-secondary:hover{background:var(--sand);color:var(--pine);}
 @keyframes wave-drift{from{stroke-dashoffset:0;}to{stroke-dashoffset:-400;}}
