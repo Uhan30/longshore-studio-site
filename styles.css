@@ -170,4 +170,11 @@ footer{padding:34px 0;background:var(--pine-2);color:#C9C3B0;font-size:13.5px;}
 .cookie-actions{display:flex;gap:10px;}
 .cookie-actions .btn-secondary{border-color:rgba(237,230,211,.5);color:var(--sand);}
 .cookie-actions .btn-secondary:hover{background:var(--sand);color:var(--pine);}
+
+/* contact form status */
+.form-status{display:none;margin-top:14px;padding:13px 15px;border-radius:8px;font-size:14px;line-height:1.5;}
+.form-status.is-visible{display:block;}
+.form-status.ok{background:rgba(176,138,62,.16);border:1px solid rgba(176,138,62,.4);color:var(--sand);}
+.form-status.err{background:rgba(193,60,40,.16);border:1px solid rgba(193,60,40,.45);color:var(--sand);}
+form.enquiry button[disabled]{opacity:.6;cursor:not-allowed;}
 @keyframes wave-drift{from{stroke-dashoffset:0;}to{stroke-dashoffset:-400;}}

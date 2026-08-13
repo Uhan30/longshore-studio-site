@@ -9,6 +9,8 @@
 <!-- <meta name="google-site-verification" content="CONTENT-VALUE"> -->
 <!-- Google Analytics loads only after the visitor accepts the cookie banner — see ga-consent.js -->
 <script src="ga-consent.js" defer></script>
+<!-- Event tracking — every call is gated behind window.gtag existing, so nothing fires pre-consent -->
+<script src="ga-events.js" defer></script>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Ccircle cx='200' cy='200' r='196' fill='%23EDE6D3'/%3E%3Cpath d='M85 188 Q 122 156 160 188 T 235 188 T 310 188' fill='none' stroke='%2322301F' stroke-width='24' stroke-linecap='round'/%3E%3Cpath d='M85 236 Q 122 204 160 236 T 235 236 T 310 236' fill='none' stroke='%23B08A3E' stroke-width='24' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,7 +59,7 @@
       <a href="#media">Media</a>
       <a href="#about">About</a>
     </nav>
-    <a class="btn btn-primary btn-sm" href="#contact">Start a project</a>
+    <a class="btn btn-primary btn-sm" href="#contact" data-cta="header">Start a project</a>
   </div>
 </header>
 
@@ -71,7 +73,7 @@
         <h1>Websites that bring in <em>calls and bookings</em>, not just compliments.</h1>
         <p class="hero-sub">I build fast, modern sites for local businesses across East Lothian and Edinburgh — plus the photography, 360 tours and aerial work that make them worth booking. One person, start to finish, no account managers.</p>
         <div class="hero-cta">
-          <a class="btn btn-primary" href="#contact">Start a project</a>
+          <a class="btn btn-primary" href="#contact" data-cta="hero">Start a project</a>
           <a class="btn btn-ghost" href="#estimate">Get a rough estimate</a>
         </div>
         <div class="hero-chips">
@@ -169,7 +171,7 @@
         <p class="lbl">Rough estimate</p>
         <p class="total">£<span id="est-total">1,450</span><span class="unit"> one-off</span></p>
         <p class="note" id="est-note">Most trades start with Standard and move up to Local once they want dedicated pages for each area they cover.</p>
-        <a class="btn btn-primary" href="#contact">Get a proper quote</a>
+        <a class="btn btn-primary" href="#contact" id="estimate-cta">Get a proper quote</a>
       </div>
     </div>
   </div>
@@ -336,7 +338,7 @@
           <div><dt>Response time</dt><dd>Within one working day</dd></div>
         </dl>
       </div>
-      <form class="enquiry" action="https://api.web3forms.com/submit" method="POST">
+      <form class="enquiry" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="43411e27-dbf3-46be-b1d4-9b0212b1dd36">
         <input type="hidden" name="subject" value="New enquiry — Longshore Studio site">
         <input type="hidden" name="from_name" value="Longshore Studio site">
@@ -344,7 +346,8 @@
         <div><label for="n">Name</label><input id="n" name="name" type="text" required></div>
         <div><label for="e">Email</label><input id="e" name="email" type="email" required></div>
         <div><label for="m">What you're working with</label><textarea id="m" name="message" placeholder="Current website, rough timescale, what's frustrating you about the one you've got."></textarea></div>
-        <button class="btn btn-primary btn-full" type="submit" style="margin-top:6px;">Send it over</button>
+        <button class="btn btn-primary btn-full" type="submit" style="margin-top:6px;" id="contact-submit">Send it over</button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
       </form>
     </div>
   </div>
@@ -407,6 +410,7 @@
 
   groups.forEach(g => {
     const isMulti = g.dataset.group === 'addons';
+    const groupKey = g.dataset.group;
     g.querySelectorAll('.est-pill').forEach(pill => {
       pill.addEventListener('click', () => {
         if (isMulti) {
@@ -416,11 +420,81 @@
           pill.classList.add('active');
         }
         update();
+
+        if (groupKey === 'scope' && window.trackEvent) {
+          window.trackEvent('select_package', {
+            package_name: pill.textContent.trim(),
+            package_value: Number(pill.dataset.value)
+          });
+        }
+        if (groupKey === 'addons' && window.trackEvent) {
+          window.trackEvent('select_media_addon', {
+            addon_name: pill.textContent.trim(),
+            addon_value: Number(pill.dataset.value),
+            selected: pill.classList.contains('active')
+          });
+        }
       });
     });
   });
 
   update();
+
+  const estimateCta = document.getElementById('estimate-cta');
+  if (estimateCta) {
+    estimateCta.addEventListener('click', function(){
+      if (!window.trackEvent) return;
+      const s = selections();
+      window.trackEvent('estimate_complete', {
+        business_type: s.type,
+        package_value: s.scope,
+        media_addons: s.addons.join(','),
+        estimate_total: s.scope + s.addons.reduce((a,b) => a + b, 0)
+      });
+    });
+  }
+
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    const statusEl = document.getElementById('form-status');
+    const submitBtn = document.getElementById('contact-submit');
+    contactForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      submitBtn.disabled = true;
+      statusEl.className = 'form-status';
+      statusEl.textContent = '';
+
+      fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(function(res){ return res.json(); })
+      .then(function(data){
+        submitBtn.disabled = false;
+        if (data && data.success) {
+          statusEl.textContent = 'Sent — I’ll get back to you within one working day.';
+          statusEl.classList.add('is-visible', 'ok');
+          contactForm.reset();
+          if (window.trackEvent) {
+            window.trackEvent('generate_lead', {
+              form_name: 'contact',
+              currency: 'GBP',
+              value: 0
+            });
+          }
+        } else {
+          statusEl.textContent = 'Something went wrong sending that — try again, or email hello@longshorestudio.co.uk directly.';
+          statusEl.classList.add('is-visible', 'err');
+        }
+      })
+      .catch(function(){
+        submitBtn.disabled = false;
+        statusEl.textContent = 'Something went wrong sending that — try again, or email hello@longshorestudio.co.uk directly.';
+        statusEl.classList.add('is-visible', 'err');
+      });
+    });
+  }
 })();
 
 if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
