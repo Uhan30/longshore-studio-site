@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Longshore Studio — Websites for East Lothian &amp; Edinburgh businesses</title>
+<meta name="description" content="Fast, modern websites, photography, 360 tours and drone work for trades, local business, and holiday lets across East Lothian and Edinburgh.">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@600;700;800&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5F0E3; --panel:#EDE6D3; --panel-2:#E3D9BE;
+  --ink:#2B3B2E; --ink-soft:#5C6B5E;
+  --edge:rgba(43,59,46,.16); --edge-soft:rgba(43,59,46,.08);
+  --gold:#B08A3E; --gold-deep:#8F6E2E; --gold-wash:rgba(176,138,62,.14); --gold-glow:rgba(176,138,62,.4);
+  --dark:#2B3B2E; --cream:#F3EEE1;
+  --display:'Familjen Grotesk','Helvetica Neue',Arial,sans-serif;
+  --body:'Figtree',system-ui,-apple-system,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,'SFMono-Regular',Menlo,monospace;
+  --wrap:1160px; --gutter:clamp(22px,5vw,64px);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}
+a{color:inherit;}
+:focus-visible{outline:2.5px solid var(--gold-deep);outline-offset:3px;border-radius:2px;}
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter);}
+h1,h2,h3{font-family:var(--display);font-weight:700;letter-spacing:-.025em;line-height:1.05;margin:0;color:var(--ink);}
+.label{font-family:var(--mono);font-weight:600;font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 20px;display:flex;align-items:center;gap:10px;}
+.label::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px 1px var(--gold-glow);flex:none;}
+.label::after{content:"";flex:1;height:1px;background:var(--edge);max-width:80px;}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:60;background:rgba(245,240,227,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--edge);}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:76px;}
+.wordmark{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);}
+.wordmark svg{width:38px;height:38px;flex:none;}
+.wordmark .word{font-family:var(--display);font-weight:800;font-size:19px;letter-spacing:-.02em;display:flex;align-items:baseline;gap:8px;}
+.wordmark .word i{font-style:normal;font-weight:600;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);}
+.nav{display:none;gap:30px;}
+.nav a{font-size:15.5px;text-decoration:none;color:var(--ink-soft);transition:color .15s;}
+.nav a:hover{color:var(--ink);}
+@media(min-width:920px){.nav{display:flex;}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--body);font-weight:600;font-size:15px;padding:13px 24px;border-radius:8px;text-decoration:none;border:1px solid transparent;transition:transform .15s,background .15s,border-color .15s;}
+.btn:hover{transform:translateY(-1px);}
+.btn--gold{background:var(--gold);color:#241A08;}
+.btn--gold:hover{background:#C49A4C;}
+.btn--line{border-color:var(--edge);color:var(--ink);}
+.btn--line:hover{border-color:var(--gold-deep);color:var(--gold-deep);}
+.btn--sm{padding:9px 18px;font-size:14px;}
+
+/* dune divider */
+.dune{height:38px;overflow:hidden;line-height:0;}
+.dune svg{width:100%;height:100%;display:block;}
+
+/* hero */
+.hero{padding:88px 0 64px;position:relative;}
+.hero-inner{max-width:820px;}
+.hero h1{font-size:clamp(38px,6vw,64px);}
+.hero h1 span{color:var(--gold-deep);}
+.hero-sub{font-size:19px;color:var(--ink-soft);max-width:560px;margin:22px 0 0;}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;}
+
+.audience-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px;}
+.audience-chip{display:flex;align-items:center;gap:8px;padding:8px 16px 8px 10px;border:1px solid var(--edge);border-radius:99px;font-family:var(--mono);font-size:12.5px;color:var(--ink-soft);background:var(--panel);}
+.audience-chip .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);}
+
+.tag-cloud{display:flex;flex-wrap:wrap;gap:10px;}
+.tag-chip{font-family:var(--mono);font-size:13px;color:var(--ink);background:var(--panel);border:1px solid var(--edge);border-radius:8px;padding:9px 15px;transition:border-color .15s,transform .15s;}
+.tag-chip:hover{border-color:var(--gold-deep);transform:translateY(-1px);}
+
+/* estimate widget */
+.estimate-panel{background:var(--panel);border:1px solid var(--edge);border-radius:18px;padding:44px;display:grid;grid-template-columns:1fr;gap:36px;}
+@media(min-width:860px){.estimate-panel{grid-template-columns:1.2fr .8fr;padding:48px;}}
+.est-group{margin-bottom:26px;}
+.est-group:last-child{margin-bottom:0;}
+.est-group h4{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-soft);margin:0 0 12px;}
+.est-pills{display:flex;flex-wrap:wrap;gap:10px;}
+.est-pill{font-family:var(--body);font-weight:600;font-size:14.5px;color:var(--ink);background:var(--bg);border:1.5px solid var(--edge);border-radius:9px;padding:11px 18px;cursor:pointer;transition:all .15s;user-select:none;}
+.est-pill:hover{border-color:var(--gold-deep);}
+.est-pill.active{background:var(--gold);border-color:var(--gold);color:#241A08;}
+.est-result{background:var(--dark);color:var(--cream);border-radius:14px;padding:32px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;position:sticky;top:100px;}
+.est-result .lbl{font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.1em;color:#A9B6AC;margin-bottom:10px;}
+.est-result .total{font-family:var(--display);font-weight:800;font-size:52px;letter-spacing:-.02em;color:var(--cream);line-height:1;}
+.est-result .total .unit{font-size:20px;font-weight:600;color:#A9B6AC;}
+.est-result .note{margin-top:16px;font-size:14px;color:#C7D0C8;line-height:1.5;}
+.est-result .btn{margin-top:22px;}
+
+section{padding:80px 0;}
+.section-head{max-width:640px;margin-bottom:48px;}
+.section-head h2{font-size:clamp(28px,4vw,42px);}
+.section-head p{color:var(--ink-soft);font-size:17px;margin:16px 0 0;}
+
+/* who it's for */
+.for-grid{display:grid;grid-template-columns:1fr;gap:2px;background:var(--edge);border:1px solid var(--edge);border-radius:14px;overflow:hidden;}
+@media(min-width:760px){.for-grid{grid-template-columns:1fr 1fr;}}
+.for-card{background:var(--panel);padding:38px 34px;}
+.for-card .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:14px;}
+.for-card h3{font-size:24px;margin-bottom:14px;}
+.for-card p{color:var(--ink-soft);margin:0 0 18px;}
+.for-card ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px;}
+.for-card li{font-size:14.5px;color:var(--ink);padding-left:18px;position:relative;}
+.for-card li::before{content:"";position:absolute;left:0;top:8px;width:7px;height:1.5px;background:var(--gold-deep);}
+
+/* services */
+.svc-grid{display:grid;grid-template-columns:1fr;gap:18px;}
+@media(min-width:760px){.svc-grid{grid-template-columns:repeat(3,1fr);}}
+.svc-card{background:var(--panel);border:1px solid var(--edge);border-radius:14px;padding:32px 28px;display:flex;flex-direction:column;}
+.svc-card.featured{border-color:var(--gold-deep);background:linear-gradient(180deg,var(--gold-wash),transparent 40%),var(--panel);}
+.svc-card h3{font-size:20px;margin-bottom:6px;}
+.svc-card .tag{font-family:var(--mono);font-size:11.5px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.08em;margin-bottom:18px;}
+.svc-card ul{list-style:none;margin:0 0 20px;padding:0;display:flex;flex-direction:column;gap:10px;flex:1;}
+.svc-card li{font-size:14.5px;display:flex;justify-content:space-between;gap:10px;border-bottom:1px dashed var(--edge-soft);padding-bottom:9px;}
+.svc-card li em{font-style:normal;color:var(--gold-deep);font-family:var(--mono);font-size:13px;}
+.svc-card .from{font-family:var(--display);font-weight:800;font-size:26px;margin:0;}
+.svc-card .from span{display:block;font-family:var(--body);font-weight:500;font-size:12.5px;color:var(--ink-soft);}
+.media-note{margin-top:22px;padding:16px 20px;border:1px dashed var(--edge);border-radius:10px;font-size:14.5px;color:var(--ink-soft);background:var(--panel);}
+.media-note strong{color:var(--ink);}
+
+/* process */
+.steps{display:grid;grid-template-columns:1fr;gap:0;}
+@media(min-width:760px){.steps{grid-template-columns:repeat(4,1fr);gap:24px;}}
+.step{padding:24px 0;border-top:1px solid var(--edge);}
+@media(min-width:760px){.step{border-top:none;padding:0;}}
+.step .num{font-family:var(--mono);font-size:13px;color:var(--gold-deep);margin-bottom:10px;}
+.step h3{font-size:18px;margin-bottom:8px;}
+.step p{color:var(--ink-soft);font-size:14.5px;margin:0;}
+
+/* work */
+.work-panel{background:var(--panel);border:1px solid var(--edge);border-radius:16px;padding:48px;text-align:left;}
+.work-panel h3{font-size:22px;margin-bottom:12px;}
+.work-panel p{color:var(--ink-soft);max-width:560px;margin:0 0 22px;}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1fr;gap:32px;align-items:start;}
+@media(min-width:760px){.about-grid{grid-template-columns:1.1fr .9fr;}}
+.about-list{display:flex;flex-direction:column;gap:16px;}
+.about-list div{display:flex;gap:14px;}
+.about-list .dot{width:8px;height:8px;border-radius:50%;background:var(--gold);margin-top:8px;flex:none;box-shadow:0 0 8px 1px var(--gold-glow);}
+.about-list strong{display:block;color:var(--ink);font-size:15.5px;margin-bottom:2px;}
+.about-list span{color:var(--ink-soft);font-size:14.5px;}
+
+/* contact — dark band for contrast */
+.contact{background:var(--dark);border-top:1px solid var(--edge);color:var(--cream);}
+.contact .label{color:#D9B36C;}
+.contact .label::before{background:#D9B36C;box-shadow:0 0 8px 1px rgba(217,179,108,.4);}
+.contact h2{color:var(--cream);}
+.contact .head p{color:#A9B6AC;}
+.contact-grid{display:grid;grid-template-columns:1fr;gap:40px;margin-top:40px;}
+@media(min-width:760px){.contact-grid{grid-template-columns:.9fr 1.1fr;}}
+.contact-info dl{margin:0;display:flex;flex-direction:column;gap:20px;}
+.contact-info dt{font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.1em;color:#A9B6AC;margin-bottom:4px;}
+.contact-info dd{margin:0;font-size:17px;}
+.contact-info dd a{text-decoration:none;border-bottom:1px solid rgba(243,238,225,.25);}
+.contact-info dd a:hover{border-color:#D9B36C;color:#D9B36C;}
+form{display:flex;flex-direction:column;gap:14px;}
+label{font-size:13px;color:#A9B6AC;margin-bottom:6px;display:block;}
+input,textarea{width:100%;background:#1E2A21;border:1px solid rgba(243,238,225,.16);border-radius:8px;padding:13px 14px;color:var(--cream);font-family:var(--body);font-size:15px;}
+input:focus,textarea:focus{outline:none;border-color:#D9B36C;}
+textarea{min-height:110px;resize:vertical;}
+.contact .btn--gold{background:#D9B36C;color:#241A08;}
+.contact .btn--gold:hover{background:#E8C583;}
+
+footer{padding:32px 0;border-top:1px solid rgba(243,238,225,.14);background:var(--dark);color:#A9B6AC;}
+.footer-inner{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:13.5px;}
+
+.rise{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;}
+.rise.in{opacity:1;transform:none;}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}html{scroll-behavior:auto;}.rise{opacity:1;transform:none;}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="#top">
+      <svg viewBox="0 0 260 260" aria-hidden="true" focusable="false"><circle cx="130" cy="130" r="105" fill="none" stroke="#2B3B2E" stroke-width="6"/><path d="M 55 122 Q 68 106 81 122 T 107 122 T 133 122 T 159 122 T 185 122" stroke="#2B3B2E" stroke-width="12" fill="none" stroke-linecap="round"/><path d="M 55 144 Q 68 128 81 144 T 107 144 T 133 144 T 159 144 T 185 144" stroke="#B08A3E" stroke-width="11" fill="none" stroke-linecap="round"/></svg>
+      <span class="word">Longshore <i>Studio</i></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#for">Who it's for</a>
+      <a href="#estimate">Estimate</a>
+      <a href="#services">Services</a>
+      <a href="#media">Media</a>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+    </nav>
+    <a class="btn btn--gold btn--sm" href="#contact">Start a project</a>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-inner">
+      <p class="label">East Lothian &amp; Edinburgh</p>
+      <h1>Websites that bring in <span>calls and bookings</span>, not just compliments.</h1>
+      <p class="hero-sub">I build fast, modern sites for local businesses across East Lothian and Edinburgh — plus the photography, 360 tours and aerial work that make them worth booking. One person, start to finish, no account managers.</p>
+      <div class="hero-cta">
+        <a class="btn btn--gold" href="#contact">Start a project</a>
+        <a class="btn btn--line" href="#estimate">Get a rough estimate</a>
+      </div>
+      <div class="audience-row">
+        <span class="audience-chip"><span class="dot"></span>Trades &amp; builders</span>
+        <span class="audience-chip"><span class="dot"></span>Holiday lets &amp; hospitality</span>
+        <span class="audience-chip"><span class="dot"></span>Shops &amp; salons</span>
+        <span class="audience-chip"><span class="dot"></span>Clinics &amp; studios</span>
+        <span class="audience-chip"><span class="dot"></span>Clubs &amp; instructors</span>
+        <span class="audience-chip"><span class="dot"></span>+ anyone else who needs one</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="dune" aria-hidden="true">
+  <svg viewBox="0 0 1200 38" preserveAspectRatio="none"><path d="M0 26 Q 80 6 160 26 T 320 26 T 480 26 T 640 26 T 800 26 T 960 26 T 1120 26 T 1200 26" fill="none" stroke="#2B3B2E" stroke-width="1.6" opacity=".28"/><path d="M0 30 Q 80 14 160 30 T 320 30 T 480 30 T 640 30 T 800 30 T 960 30 T 1120 30 T 1200 30" fill="none" stroke="#B08A3E" stroke-width="1.6" opacity=".45"/></svg>
+</div>
+
+<section id="for">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="label">Who it's for</p>
+      <h2>If your business is in East Lothian or Edinburgh and your website isn't pulling its weight, that's the whole brief.</h2>
+      <p>Trade, shop, studio, clinic or holiday let — the fix is usually the same: fast, mobile-first, built around whatever actually gets someone to call, book or turn up. If you're relying on Google Maps and word of mouth alone, there's more sitting on the table.</p>
+    </div>
+    <div class="tag-cloud">
+      <span class="tag-chip">Joiners &amp; builders</span>
+      <span class="tag-chip">Roofers &amp; tradespeople</span>
+      <span class="tag-chip">Holiday lets &amp; self-catering</span>
+      <span class="tag-chip">Cafes &amp; restaurants</span>
+      <span class="tag-chip">Hairdressers &amp; salons</span>
+      <span class="tag-chip">Fitness &amp; instructors</span>
+      <span class="tag-chip">Shops &amp; retail</span>
+      <span class="tag-chip">Vets &amp; clinics</span>
+      <span class="tag-chip">Estate &amp; letting agents</span>
+      <span class="tag-chip">Clubs &amp; classes</span>
+      <span class="tag-chip">Photographers &amp; creatives</span>
+      <span class="tag-chip">Something else entirely</span>
+    </div>
+  </div>
+</section>
+
+<div class="dune" aria-hidden="true">
+  <svg viewBox="0 0 1200 38" preserveAspectRatio="none"><path d="M0 26 Q 80 6 160 26 T 320 26 T 480 26 T 640 26 T 800 26 T 960 26 T 1120 26 T 1200 26" fill="none" stroke="#2B3B2E" stroke-width="1.6" opacity=".28"/><path d="M0 30 Q 80 14 160 30 T 320 30 T 480 30 T 640 30 T 800 30 T 960 30 T 1120 30 T 1200 30" fill="none" stroke="#B08A3E" stroke-width="1.6" opacity=".45"/></svg>
+</div>
+
+<section id="estimate">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="label">Try it yourself</p>
+      <h2>Get a rough estimate in ten seconds.</h2>
+      <p>Play with it — this is the same maths I quote from, live on the page. Fixed price, no waiting for a callback.</p>
+    </div>
+    <div class="estimate-panel">
+      <div>
+        <div class="est-group">
+          <h4>What kind of business?</h4>
+          <div class="est-pills" data-group="type">
+            <button type="button" class="est-pill active" data-value="trade" data-note="Most trades start with Standard and add the areas-covered pages once — no monthly retainer.">Trade / local business</button>
+            <button type="button" class="est-pill" data-value="holiday" data-note="Most holiday let clients add the 360 tour — guests book on how the place looks, not the copy.">Holiday let / hospitality</button>
+            <button type="button" class="est-pill" data-value="retail" data-note="Shops and studios usually pair Standard with photography — product and interior shots earn their keep fast.">Shop / studio / other</button>
+          </div>
+        </div>
+        <div class="est-group">
+          <h4>Site scope</h4>
+          <div class="est-pills" data-group="scope">
+            <button type="button" class="est-pill" data-value="795">One-page — £795</button>
+            <button type="button" class="est-pill active" data-value="1450">Up to six pages — £1,450</button>
+            <button type="button" class="est-pill" data-value="2400">Multi-area SEO — £2,400</button>
+          </div>
+        </div>
+        <div class="est-group">
+          <h4>Add media (optional)</h4>
+          <div class="est-pills" data-group="addons">
+            <button type="button" class="est-pill" data-value="350">Photography — £350</button>
+            <button type="button" class="est-pill" data-value="400">360 tour — £400</button>
+            <button type="button" class="est-pill" data-value="600">Drone stills &amp; video — £600</button>
+          </div>
+        </div>
+      </div>
+      <div class="est-result">
+        <p class="lbl">Rough estimate</p>
+        <p class="total">£<span id="est-total">1,450</span><span class="unit"> one-off</span></p>
+        <p class="note" id="est-note">Most trades start with Standard and add the areas-covered pages once — no monthly retainer.</p>
+        <a class="btn btn--gold" href="#contact">Get a proper quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="label">Services &amp; pricing</p>
+      <h2>Prices published on purpose. No quote-fishing.</h2>
+      <p>Whichever site you need, it's built the same way: fast, tested on a real phone, and yours outright.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card">
+        <p class="tag">Starter</p>
+        <h3>One-page site</h3>
+        <ul>
+          <li>Single page, built to convert <em>Included</em></li>
+          <li>Mobile-first, fast-loading <em>Included</em></li>
+          <li>Contact form &amp; map <em>Included</em></li>
+        </ul>
+        <p class="from">£795<span>one-off</span></p>
+      </div>
+      <div class="svc-card featured">
+        <p class="tag">Standard — most booked</p>
+        <h3>Up to six pages</h3>
+        <ul>
+          <li>Full site, up to 6 pages <em>Included</em></li>
+          <li>Reviews &amp; areas-covered pages <em>Included</em></li>
+          <li>Care plan available <em>from £35/mo</em></li>
+        </ul>
+        <p class="from">£1,450<span>one-off</span></p>
+      </div>
+      <div class="svc-card">
+        <p class="tag">Local</p>
+        <h3>Multi-area SEO</h3>
+        <ul>
+          <li>Everything in Standard <em>Included</em></li>
+          <li>Local SEO across service areas <em>Included</em></li>
+          <li>Booking/quote tools <em>from £500</em></li>
+        </ul>
+        <p class="from">£2,400<span>one-off</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="dune" aria-hidden="true">
+  <svg viewBox="0 0 1200 38" preserveAspectRatio="none"><path d="M0 26 Q 80 6 160 26 T 320 26 T 480 26 T 640 26 T 800 26 T 960 26 T 1120 26 T 1200 26" fill="none" stroke="#2B3B2E" stroke-width="1.6" opacity=".28"/><path d="M0 30 Q 80 14 160 30 T 320 30 T 480 30 T 640 30 T 800 30 T 960 30 T 1120 30 T 1200 30" fill="none" stroke="#B08A3E" stroke-width="1.6" opacity=".45"/></svg>
+</div>
+
+<section id="media">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="label">Photography, 360 &amp; aerial</p>
+      <h2>The visuals that make people actually want to book.</h2>
+      <p>Shot by me, on the same visit if it suits — one person, one invoice, no separate agency to chase.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card">
+        <p class="tag">Photography</p>
+        <h3>Half-day shoot</h3>
+        <ul>
+          <li>Interiors &amp; exteriors <em>Included</em></li>
+          <li>Edited, web-ready gallery <em>Included</em></li>
+          <li>Full day <em>from £550</em></li>
+        </ul>
+        <p class="from">£350<span>per shoot</span></p>
+      </div>
+      <div class="svc-card featured">
+        <p class="tag">360 tour — popular for lets</p>
+        <h3>Virtual walkthrough</h3>
+        <ul>
+          <li>Full property walkthrough <em>Included</em></li>
+          <li>Embeddable on your site <em>Included</em></li>
+          <li>Google Business listing version <em>Included</em></li>
+        </ul>
+        <p class="from">£400<span>per property</span></p>
+      </div>
+      <div class="svc-card">
+        <p class="tag">Aerial</p>
+        <h3>Drone stills &amp; video</h3>
+        <ul>
+          <li>Stills package <em>£250</em></li>
+          <li>Video package <em>£450</em></li>
+          <li>Both, same visit <em>from £600</em></li>
+        </ul>
+        <p class="from">£250<span>from</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="dune" aria-hidden="true">
+  <svg viewBox="0 0 1200 38" preserveAspectRatio="none"><path d="M0 12 Q 80 32 160 12 T 320 12 T 480 12 T 640 12 T 800 12 T 960 12 T 1120 12 T 1200 12" fill="none" stroke="#2B3B2E" stroke-width="1.6" opacity=".28"/><path d="M0 16 Q 80 36 160 16 T 320 16 T 480 16 T 640 16 T 800 16 T 960 16 T 1120 16 T 1200 16" fill="none" stroke="#B08A3E" stroke-width="1.6" opacity=".45"/></svg>
+</div>
+
+<section id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="label">How it works</p>
+      <h2>Four steps, two to four weeks, no mystery.</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><p class="num">01</p><h3>Chat</h3><p>A call or a form — what's frustrating about what you've got now, and what you actually need it to do.</p></div>
+      <div class="step"><p class="num">02</p><h3>Plan</h3><p>Fixed price, fixed scope, agreed before anything's built. 50% deposit to start.</p></div>
+      <div class="step"><p class="num">03</p><h3>Build</h3><p>Built, then two rounds of revisions — one consolidated set of feedback each round.</p></div>
+      <div class="step"><p class="num">04</p><h3>Launch</h3><p>Live, tested on a real phone, and yours. Care plan optional from there.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="label">Work</p>
+      <h2>Early days, on purpose.</h2>
+    </div>
+    <div class="work-panel">
+      <h3>Building this out with real projects, not filler.</h3>
+      <p>I'd rather show two strong, honest case studies than eight thin ones. The first client builds are underway now — this section fills in as they go live, with real before-and-afters and real numbers where clients are happy to share them.</p>
+      <a class="btn btn--line" href="#contact">Be one of the first</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <p class="label">About</p>
+        <h2 style="font-size:clamp(26px,3.6vw,36px);margin-bottom:18px;">One person, based on the East Coast, no agency overhead.</h2>
+        <p style="color:var(--ink-soft);max-width:520px;">Longshore Studio is me — I build the site, I answer the phone, and if a project calls for it, I'm the one behind the camera too. That means faster turnaround and a fixed price with no markup for a team that isn't there.</p>
+      </div>
+      <div class="about-list">
+        <div><span class="dot"></span><div><strong>Local</strong><span>East Lothian &amp; Edinburgh, in person where it helps.</span></div></div>
+        <div><span class="dot"></span><div><strong>Fast sites</strong><span>Built to load quickly and pass real mobile performance checks, not just look good in a screenshot.</span></div></div>
+        <div><span class="dot"></span><div><strong>Straight pricing</strong><span>Published rates, fixed scope, 50% deposit — no surprise invoices.</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="head">
+      <p class="label">Get in touch</p>
+      <h2 style="font-size:clamp(30px,4.8vw,50px);margin-bottom:16px;">Tell me what you're working with.</h2>
+      <p>Current website, rough timescale, and what's frustrating you about what you've got — that's all I need to start.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <dl>
+          <div><dt>Email</dt><dd><a href="mailto:hello@longshorestudio.co.uk">hello@longshorestudio.co.uk</a></dd></div>
+          <div><dt>Phone</dt><dd><a href="tel:+447886880560">07886 880560</a></dd></div>
+          <div><dt>Based</dt><dd>East Lothian, Scotland</dd></div>
+          <div><dt>Response time</dt><dd>Within one working day</dd></div>
+        </dl>
+      </div>
+      <form action="https://formsubmit.co/hello@longshorestudio.co.uk" method="POST">
+        <input type="hidden" name="_subject" value="New enquiry — Longshore Studio site">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <div><label for="n">Name</label><input id="n" name="name" type="text" required></div>
+        <div><label for="e">Email</label><input id="e" name="email" type="email" required></div>
+        <div><label for="m">What you're working with</label><textarea id="m" name="message" placeholder="Current website, rough timescale, what's frustrating you about the one you've got."></textarea></div>
+        <button class="btn btn--gold" type="submit" style="align-self:flex-start;margin-top:6px;">Send it over</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>© Longshore Studio, East Lothian.</span>
+    <span>hello@longshorestudio.co.uk</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const groups = document.querySelectorAll('.est-pills');
+  const totalEl = document.getElementById('est-total');
+  const noteEl = document.getElementById('est-note');
+  let shownTotal = 1450;
+
+  function selections(){
+    const state = {type:'trade', scope:1450, addons:[], note:''};
+    groups.forEach(g => {
+      const key = g.dataset.group;
+      const pills = [...g.querySelectorAll('.est-pill')];
+      if (key === 'addons') {
+        state.addons = pills.filter(p => p.classList.contains('active')).map(p => Number(p.dataset.value));
+      } else {
+        const active = pills.find(p => p.classList.contains('active')) || pills[0];
+        if (key === 'scope') state.scope = Number(active.dataset.value);
+        if (key === 'type') { state.type = active.dataset.value; state.note = active.dataset.note; }
+      }
+    });
+    return state;
+  }
+
+  function animateTo(target){
+    const start = shownTotal, dur = 420, t0 = performance.now();
+    function frame(t){
+      const p = Math.min(1, (t - t0) / dur);
+      const eased = 1 - Math.pow(1 - p, 3);
+      const val = Math.round(start + (target - start) * eased);
+      totalEl.textContent = val.toLocaleString('en-GB');
+      if (p < 1) requestAnimationFrame(frame); else shownTotal = target;
+    }
+    requestAnimationFrame(frame);
+  }
+
+  function update(){
+    const s = selections();
+    const total = s.scope + s.addons.reduce((a,b) => a+b, 0);
+    animateTo(total);
+    noteEl.textContent = s.note;
+  }
+
+  groups.forEach(g => {
+    const isMulti = g.dataset.group === 'addons';
+    g.querySelectorAll('.est-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        if (isMulti) {
+          pill.classList.toggle('active');
+        } else {
+          g.querySelectorAll('.est-pill').forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+        }
+        update();
+      });
+    });
+  });
+
+  update();
+})();
+
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.12});
+  document.querySelectorAll('section').forEach(s => { s.classList.add('rise'); io.observe(s); });
+} else {
+  document.querySelectorAll('section').forEach(s => s.classList.add('in'));
+}
+</script>
+
+</body>
+</html>
