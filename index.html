@@ -7,6 +7,8 @@
 <meta name="description" content="Fast, modern websites, photography, 360 tours and drone work for trades, local business, and holiday lets across East Lothian and Edinburgh.">
 <!-- Google Search Console verification: replace CONTENT-VALUE with the code Search Console gives you, then submit for verification -->
 <!-- <meta name="google-site-verification" content="CONTENT-VALUE"> -->
+<!-- Captures utm_source/medium/campaign/content on arrival, 30-day last-touch window — see 01 Business/Process/ga4-event-tracking.md -->
+<script src="ga-attribution.js" defer></script>
 <!-- Google Analytics loads only after the visitor accepts the cookie banner — see ga-consent.js -->
 <script src="ga-consent.js" defer></script>
 <!-- Event tracking — every call is gated behind window.gtag existing, so nothing fires pre-consent -->
@@ -343,6 +345,10 @@
         <input type="hidden" name="subject" value="New enquiry — Longshore Studio site">
         <input type="hidden" name="from_name" value="Longshore Studio site">
         <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="utm_source">
+        <input type="hidden" name="utm_medium">
+        <input type="hidden" name="utm_campaign">
+        <input type="hidden" name="utm_content">
         <div><label for="n">Name</label><input id="n" name="name" type="text" required></div>
         <div><label for="e">Email</label><input id="e" name="email" type="email" required></div>
         <div><label for="m">What you're working with</label><textarea id="m" name="message" placeholder="Current website, rough timescale, what's frustrating you about the one you've got."></textarea></div>
@@ -440,17 +446,22 @@
 
   update();
 
+  function withAttribution(params){
+    const attribution = window.getAttribution ? window.getAttribution() : {};
+    return Object.assign({}, params, attribution);
+  }
+
   const estimateCta = document.getElementById('estimate-cta');
   if (estimateCta) {
     estimateCta.addEventListener('click', function(){
       if (!window.trackEvent) return;
       const s = selections();
-      window.trackEvent('estimate_complete', {
+      window.trackEvent('estimate_complete', withAttribution({
         business_type: s.type,
         package_value: s.scope,
         media_addons: s.addons.join(','),
         estimate_total: s.scope + s.addons.reduce((a,b) => a + b, 0)
-      });
+      }));
     });
   }
 
@@ -463,6 +474,12 @@
       submitBtn.disabled = true;
       statusEl.className = 'form-status';
       statusEl.textContent = '';
+
+      const attribution = window.getAttribution ? window.getAttribution() : {};
+      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'].forEach(function(field){
+        const input = contactForm.querySelector('[name="' + field + '"]');
+        if (input) input.value = attribution[field] || '';
+      });
 
       fetch(contactForm.action, {
         method: 'POST',
@@ -477,11 +494,11 @@
           statusEl.classList.add('is-visible', 'ok');
           contactForm.reset();
           if (window.trackEvent) {
-            window.trackEvent('generate_lead', {
+            window.trackEvent('generate_lead', withAttribution({
               form_name: 'contact',
               currency: 'GBP',
               value: 0
-            });
+            }));
           }
         } else {
           statusEl.textContent = 'Something went wrong sending that — try again, or email hello@longshorestudio.co.uk directly.';
