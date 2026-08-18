@@ -16,8 +16,11 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Ccircle cx='200' cy='200' r='196' fill='%23EDE6D3'/%3E%3Cpath d='M85 188 Q 122 156 160 188 T 235 188 T 310 188' fill='none' stroke='%2322301F' stroke-width='24' stroke-linecap='round'/%3E%3Cpath d='M85 236 Q 122 204 160 236 T 235 236 T 310 236' fill='none' stroke='%23B08A3E' stroke-width='24' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://longshore-smart-business.vercel.app">
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<!-- Smart Business assistant widget — same shared deployment for every client, this instance configured for Longshore itself -->
+<link rel="stylesheet" href="https://longshore-smart-business.vercel.app/assistant.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -41,7 +44,9 @@
     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website design" } },
     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Photography" } },
     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "360 virtual tours" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Drone photography and video" } }
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Drone photography and video" } },
+    { "@type": "Offer", "price": "49", "priceCurrency": "GBP", "itemOffered": { "@type": "Service", "name": "Missed-call text-back" } },
+    { "@type": "Offer", "price": "69", "priceCurrency": "GBP", "itemOffered": { "@type": "Service", "name": "Website assistant" } }
   ]
 }
 </script>
@@ -59,6 +64,7 @@
       <a href="#estimate">Estimate</a>
       <a href="#services">Services</a>
       <a href="#media">Media</a>
+      <a href="#smart-business">Smart Business</a>
       <a href="#about">About</a>
     </nav>
     <a class="btn btn-primary btn-sm" href="#contact" data-cta="header">Start a project</a>
@@ -174,6 +180,7 @@
         <p class="total">£<span id="est-total">1,450</span><span class="unit"> one-off</span></p>
         <p class="note" id="est-note">Most trades start with Standard and move up to Local once they want dedicated pages for each area they cover.</p>
         <a class="btn btn-primary" href="#contact" id="estimate-cta">Get a proper quote</a>
+        <p class="sb-note">Also missing calls or answering the same questions on repeat? See <a href="#smart-business">Smart Business</a> below — separate monthly add-ons, not part of this one-off total.</p>
       </div>
     </div>
   </div>
@@ -285,6 +292,104 @@
   </svg>
 </div>
 
+<section id="smart-business" class="smart-business">
+  <div class="wrap">
+    <div class="section-head rise">
+      <p class="eyebrow">New — Smart Business</p>
+      <h2>Your customers get an answer even when you can't stop working.</h2>
+      <p>Two small monthly add-ons, not another platform to learn: missed calls get an instant text back, and your website answers common questions itself — honestly, from facts you've approved, day or night.</p>
+    </div>
+
+    <div class="sb-demo-grid rise">
+      <div class="proof-card proof-card--calls" id="sb-phone-demo">
+        <h3>Never Miss a Job</h3>
+        <p class="dek">Your phone diverts to a dedicated number when you don't answer. The caller gets this, seconds later, in your name.</p>
+        <div class="phone-thread" aria-label="Simulated text message exchange">
+          <div class="sb-msg sb-msg-caller">Missed call from a customer</div>
+          <div class="sb-msg sb-msg-biz">Hi, it's [Business] — sorry we missed your call. What can we help with? We'll ring you back within the hour.</div>
+          <div class="sb-msg sb-msg-caller">Hi — need a quote for a leaking outdoor tap</div>
+          <div class="sb-msg sb-msg-note">→ Forwarded to the owner instantly, marked as a lead</div>
+        </div>
+        <button type="button" class="sb-replay" id="sb-replay-btn">Replay</button>
+        <p class="caption">Simulation of a real rescue — not a live line.</p>
+      </div>
+
+      <div class="proof-card proof-card--assistant">
+        <h3>A Website That Answers Back</h3>
+        <p class="dek">This is the real thing, live on this page right now. Try to catch it out.</p>
+        <div class="sb-chip-row" id="sb-assistant-chips">
+          <button type="button" class="sb-chip" data-q="What does a standard website cost?">"What does a standard website cost?"</button>
+          <button type="button" class="sb-chip" data-q="How much is a full-day photography shoot in October?">"How much is a full-day photography shoot in October?"</button>
+          <button type="button" class="sb-chip" data-q="Can you build me a custom booking calendar for free?">"Can you build me a custom booking calendar for free?"</button>
+        </div>
+        <div class="sb-pointer" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 4 L20 20 M20 20 L20 10 M20 20 L10 20"/></svg>
+          <span>Opens the chat bottom-right</span>
+        </div>
+        <p class="caption">It never guesses a price it isn't sure of — it says so and takes your details instead.</p>
+      </div>
+    </div>
+
+    <div class="sb-steps-wrap">
+      <div class="section-head rise" style="margin-bottom:28px;">
+        <p class="eyebrow">How it gets set up</p>
+        <h3 style="font-size:clamp(24px,3.4vw,34px);">Three steps, done with you, not to you.</h3>
+      </div>
+      <div class="steps rise">
+        <div class="step"><p class="num">One</p><h3>Chat</h3><p>Which one (or both) makes sense for how your customers actually reach you.</p></div>
+        <div class="step"><p class="num">Two</p><h3>Set up together</p><p>Your call diverted, or your facts approved for the assistant — I do the setup, you approve every word.</p></div>
+        <div class="step"><p class="num">Three</p><h3>Live in days</h3><p>No contract, cancel any time. A monthly report shows exactly what it rescued.</p></div>
+      </div>
+    </div>
+
+    <div class="sb-offer-banner rise"><strong>Founding-client offer</strong> — first month free and the setup fee waived for the first 5 Smart Business clients. <span class="sb-offer-count">0 / 5 taken</span></div>
+
+    <div class="card-grid rise">
+      <div class="info-card">
+        <p class="tag-label">Never Miss a Job</p>
+        <h3>Missed-call text-back</h3>
+        <ul>
+          <li>Instant SMS in your name <em>Included</em></li>
+          <li>Replies forwarded to you <em>Included</em></li>
+          <li>Monthly "calls rescued" report <em>Included</em></li>
+        </ul>
+        <p class="from">£49<span>per month</span></p>
+      </div>
+      <div class="info-card featured">
+        <p class="tag-label">Best value — covers both channels</p>
+        <h3>Never Miss a Job + Website Assistant</h3>
+        <ul>
+          <li>Both products, one relationship <em>Included</em></li>
+          <li>One monthly report for both <em>Included</em></li>
+          <li>Cheaper than buying separately <em>Included</em></li>
+        </ul>
+        <p class="from">£99<span>per month</span></p>
+      </div>
+      <div class="info-card">
+        <p class="tag-label">A Website That Answers Back</p>
+        <h3>Website assistant</h3>
+        <ul>
+          <li>Answers only approved facts <em>Included</em></li>
+          <li>Never guesses a price <em>Included</em></li>
+          <li>Set-up &amp; knowledge base build <em>£249 once</em></li>
+        </ul>
+        <p class="from">£69<span>per month</span></p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:28px;">
+      <a class="btn btn-primary" href="#contact" data-cta="smart-business">Ask about Smart Business</a>
+      <p class="sb-note">No contract, cancel any time. Both bundle down further alongside a website care plan.</p>
+    </div>
+  </div>
+</section>
+
+<div class="tideline" aria-hidden="true">
+  <svg viewBox="0 0 1920 120" preserveAspectRatio="none">
+    <path d="M -100 55 Q 50 20 200 55 T 500 55 T 800 55 T 1100 55 T 1400 55 T 1700 55 T 2020 55" fill="none" stroke="#22301F" stroke-width="4" stroke-linecap="round" opacity="0.35"/>
+    <path d="M -100 78 Q 50 43 200 78 T 500 78 T 800 78 T 1100 78 T 1400 78 T 1700 78 T 2020 78" fill="none" stroke="#B08A3E" stroke-width="4" stroke-linecap="round" opacity="0.55"/>
+  </svg>
+</div>
+
 <section id="process">
   <div class="wrap">
     <div class="section-head rise">
@@ -338,6 +443,7 @@
           <div><dt>Phone</dt><dd><a href="tel:+447886880560">07886 880560</a></dd></div>
           <div><dt>Based</dt><dd>East Lothian, Scotland</dd></div>
           <div><dt>Response time</dt><dd>Within one working day</dd></div>
+          <div><dt>Also ask about</dt><dd><a href="#smart-business">Missed-call rescue &amp; the website assistant</a></dd></div>
         </dl>
       </div>
       <form class="enquiry" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
@@ -522,7 +628,70 @@ if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-mot
 } else {
   document.querySelectorAll('.rise').forEach(s => s.classList.add('in'));
 }
+
+// Smart Business — missed-call phone-thread demo.
+// Messages are fully visible in the HTML by default (no JS dependency).
+// This only ever ADDS a staggered reveal on top when motion is allowed —
+// it can never be the thing that makes the content appear.
+(function () {
+  const card = document.getElementById('sb-phone-demo');
+  const replayBtn = document.getElementById('sb-replay-btn');
+  if (!card) return;
+  const msgs = Array.from(card.querySelectorAll('.sb-msg'));
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function playReveal() {
+    if (reduceMotion || !msgs.length) return;
+    msgs.forEach((m) => m.classList.add('sb-pending'));
+    // Force a reflow so the pending (opacity:0) state actually paints before
+    // we start adding sb-in, otherwise the browser may coalesce both.
+    void card.offsetHeight;
+    msgs.forEach((m, i) => {
+      setTimeout(() => m.classList.add('sb-in'), i * 300);
+    });
+    // Belt and suspenders: guarantee full visibility even if a timeout
+    // somehow fails to fire (tab throttling, etc.).
+    setTimeout(() => msgs.forEach((m) => m.classList.add('sb-in')), msgs.length * 300 + 800);
+  }
+
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    const cardIo = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { playReveal(); cardIo.unobserve(e.target); } });
+    }, { threshold: 0.4 });
+    cardIo.observe(card);
+  }
+  if (replayBtn) replayBtn.addEventListener('click', () => {
+    msgs.forEach((m) => m.classList.remove('sb-in'));
+    void card.offsetHeight;
+    playReveal();
+    if (window.trackEvent) window.trackEvent('sb_replay_click', {});
+  });
+})();
+
+// Smart Business — suggested-question chips open the real live assistant
+// widget (from public/assistant.js) and send the chosen question.
+(function () {
+  const chips = document.querySelectorAll('#sb-assistant-chips .sb-chip');
+  if (!chips.length) return;
+  chips.forEach((chip) => {
+    chip.addEventListener('click', () => {
+      const toggle = document.querySelector('.ls-assistant-toggle');
+      const input = document.querySelector('.ls-assistant-input');
+      const form = document.querySelector('.ls-assistant-form');
+      if (window.trackEvent) window.trackEvent('sb_chip_click', { question: chip.getAttribute('data-q') || '' });
+      if (!toggle || !input || !form) return;
+      if (toggle.getAttribute('aria-expanded') !== 'true') toggle.click();
+      input.value = chip.getAttribute('data-q') || '';
+      form.dispatchEvent(new Event('submit', { cancelable: true }));
+    });
+  });
+})();
 </script>
+
+<script src="https://longshore-smart-business.vercel.app/assistant.js"
+        data-client="longshore"
+        data-suggestions='["What does a standard website cost?","Do you do photography and drone work too?","How much is a full-day photography shoot in October?"]'
+        defer></script>
 
 </body>
 </html>

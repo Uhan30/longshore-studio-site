@@ -113,6 +113,47 @@ section{padding:clamp(60px,8vw,96px) 0;}
 .info-card .from{font-family:var(--display);font-weight:600;font-size:26px;margin:0;}
 .info-card .from span{display:block;font-family:var(--body);font-weight:400;font-size:12.5px;color:var(--pine-70);}
 
+/* smart business */
+.smart-business .eyebrow{color:var(--tide);}
+.sb-demo-grid{display:grid;grid-template-columns:1fr;gap:20px;margin-bottom:56px;}
+@media(min-width:760px){.sb-demo-grid{grid-template-columns:1fr 1fr;}}
+.proof-card{background:var(--foam);border:1px solid var(--line);border-radius:10px;padding:32px 28px;display:flex;flex-direction:column;}
+.proof-card h3{font-size:20px;margin-bottom:8px;}
+.proof-card>p.dek{color:var(--pine-70);font-size:14.5px;margin:0 0 22px;}
+.proof-card .caption{font-size:12.5px;color:var(--pine-70);margin:16px 0 0;font-style:italic;}
+
+.proof-card--calls{background:var(--pine);color:var(--sand);}
+.proof-card--calls h3{color:var(--sand);}
+.proof-card--calls>p.dek{color:#EDE6D3B3;}
+.proof-card--calls .caption{color:#EDE6D3B3;}
+.phone-thread{display:flex;flex-direction:column;gap:10px;min-height:168px;}
+.sb-msg{max-width:82%;padding:10px 15px;border-radius:12px;font-size:14px;line-height:1.4;opacity:1;transform:none;}
+.sb-msg.sb-pending{transition:opacity .45s ease,transform .45s ease;}
+.sb-msg.sb-pending:not(.sb-in){opacity:0;transform:translateY(8px);}
+.sb-msg-caller{align-self:flex-start;background:#EDE6D31A;border:1px solid #EDE6D333;border-bottom-left-radius:3px;}
+.sb-msg-biz{align-self:flex-end;background:var(--dune-light);color:var(--pine);border-bottom-right-radius:3px;}
+.sb-msg-note{align-self:center;font-size:12px;color:#EDE6D399;background:none;padding:2px 0;}
+.sb-replay{margin-top:16px;background:none;border:1.5px solid #EDE6D355;color:var(--sand);border-radius:999px;padding:12px 18px;font-size:13px;font-weight:600;cursor:pointer;font-family:var(--body);align-self:flex-start;min-height:44px;}
+.sb-replay:hover{border-color:var(--sand);}
+
+.sb-chip-row{display:flex;flex-direction:column;gap:8px;margin-bottom:6px;}
+.sb-chip{text-align:left;background:var(--sand);border:1px solid var(--line);border-radius:10px;padding:11px 14px;font-size:13.5px;font-family:var(--body);color:var(--pine);cursor:pointer;}
+.sb-chip:hover{border-color:var(--dune);}
+.sb-pointer{display:flex;align-items:center;gap:8px;margin-top:18px;color:var(--dune);font-size:13px;font-weight:600;}
+.sb-pointer svg{animation:sb-nudge 1.6s ease-in-out infinite;}
+@keyframes sb-nudge{0%,100%{transform:translate(0,0);}50%{transform:translate(4px,4px);}}
+
+.sb-steps-wrap{margin-bottom:56px;}
+.sb-steps-wrap .section-head{margin-bottom:28px;}
+/* .steps is shared with #process, which has 4 real steps — this section
+   only has 3, so the shared repeat(4,1fr) leaves an empty trailing column. */
+@media(min-width:760px){.sb-steps-wrap .steps{grid-template-columns:repeat(3,1fr);}}
+.sb-note{margin-top:14px;font-size:14px;color:var(--pine-70);}
+.sb-note a{color:var(--tide);font-weight:600;}
+.sb-offer-banner{background:var(--dune-light);color:var(--pine);border-radius:10px;padding:14px 22px;text-align:center;font-size:14.5px;line-height:1.5;margin-bottom:22px;}
+.sb-offer-banner strong{font-weight:700;}
+.sb-offer-count{display:inline-block;margin-left:6px;font-size:12px;font-weight:600;background:var(--pine);color:var(--sand);border-radius:999px;padding:3px 11px;white-space:nowrap;}
+
 /* process */
 .steps{display:grid;grid-template-columns:1fr;gap:0;}
 @media(min-width:760px){.steps{grid-template-columns:repeat(4,1fr);gap:26px;}}
@@ -164,7 +205,11 @@ footer{padding:34px 0;background:var(--pine-2);color:#C9C3B0;font-size:13.5px;}
 .wave-anim{animation:wave-drift 22s linear infinite;}
 
 /* cookie consent bar */
-.cookie-bar{position:fixed;left:16px;right:16px;bottom:16px;z-index:200;max-width:480px;margin:0 auto;background:var(--pine);color:var(--sand);border-radius:14px;padding:20px 22px;box-shadow:0 12px 32px rgba(0,0,0,.28);display:flex;flex-direction:column;gap:14px;}
+.cookie-bar{position:fixed;left:16px;right:16px;bottom:16px;z-index:2147483647;max-width:480px;margin:0 auto;background:var(--pine);color:var(--sand);border-radius:14px;padding:20px 22px;box-shadow:0 12px 32px rgba(0,0,0,.28);display:flex;flex-direction:column;gap:14px;}
+/* Consent controls must always win hit-testing over the assistant widget
+   (embedded from an external deployment, z-index 2147483000) when both are
+   visible on a narrow viewport — legal consent UI never gets obscured by a
+   bolted-on floating control. */
 .cookie-bar p{margin:0;font-size:13.5px;line-height:1.5;color:var(--sand);opacity:.92;}
 .cookie-actions{display:flex;gap:10px;}
 .cookie-actions .btn-secondary{border-color:rgba(237,230,211,.5);color:var(--sand);}
