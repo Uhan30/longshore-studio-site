@@ -3,30 +3,40 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Longshore Studio — Websites for East Lothian &amp; Edinburgh businesses</title>
-<meta name="description" content="Fast, modern websites, photography, 360 tours and drone work for trades, local business, and holiday lets across East Lothian and Edinburgh.">
+<title>Longshore Studio — Websites &amp; smart systems | East Lothian &amp; Edinburgh</title>
+<meta name="description" content="Websites, missed-call rescue and a website assistant, plus photography, 360 tours and drone work. One person, real prices, East Lothian &amp; Edinburgh.">
+<link rel="canonical" href="https://longshorestudio.co.uk/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Longshore Studio — Websites & smart systems">
+<meta property="og:description" content="Websites, missed-call rescue and a website assistant, plus photography, 360 tours and drone work. One person, real prices.">
+<meta property="og:url" content="https://longshorestudio.co.uk/">
+<meta name="twitter:card" content="summary">
 <!-- Google Search Console verification: replace CONTENT-VALUE with the code Search Console gives you, then submit for verification -->
 <!-- <meta name="google-site-verification" content="CONTENT-VALUE"> -->
-<!-- Captures utm_source/medium/campaign/content on arrival, 30-day last-touch window — see 01 Business/Process/ga4-event-tracking.md -->
 <script src="ga-attribution.js" defer></script>
-<!-- Google Analytics loads only after the visitor accepts the cookie banner — see ga-consent.js -->
 <script src="ga-consent.js" defer></script>
-<!-- Event tracking — every call is gated behind window.gtag existing, so nothing fires pre-consent -->
 <script src="ga-events.js" defer></script>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Ccircle cx='200' cy='200' r='196' fill='%23EDE6D3'/%3E%3Cpath d='M85 188 Q 122 156 160 188 T 235 188 T 310 188' fill='none' stroke='%2322301F' stroke-width='24' stroke-linecap='round'/%3E%3Cpath d='M85 236 Q 122 204 160 236 T 235 236 T 310 236' fill='none' stroke='%23B08A3E' stroke-width='24' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://longshore-smart-business.vercel.app">
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<!-- Smart Business assistant widget — same shared deployment for every client, this instance configured for Longshore itself -->
-<link rel="stylesheet" href="https://longshore-smart-business.vercel.app/assistant.css">
+<!-- Fonts and the external widget stylesheet aren't needed for first paint
+     of core page content — loaded non-render-blocking (measured render-
+     blocking impact via Lighthouse, not assumed), with a noscript fallback
+     so nothing is missing if JS is unavailable. -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,500&family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,500&family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"></noscript>
+<link rel="stylesheet" href="styles-v5.css">
+<!-- Smart Business assistant widget — real, shared deployment, themed to the new palette via --ls-* custom properties -->
+<style>:root{--ls-primary:#22301F;--ls-accent:#B08A3E;--ls-bg:#F8F5EC;}</style>
+<link rel="preload" as="style" href="https://longshore-smart-business.vercel.app/assistant.css" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://longshore-smart-business.vercel.app/assistant.css"></noscript>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Longshore Studio",
-  "description": "Websites, photography, 360 tours and drone work for small businesses across East Lothian and Edinburgh.",
+  "description": "Websites, missed-call rescue and a website assistant, plus photography, 360 tours and drone work, for small businesses across East Lothian and Edinburgh.",
   "telephone": "+447886880560",
   "email": "hello@longshorestudio.co.uk",
   "url": "https://longshorestudio.co.uk/",
@@ -41,12 +51,13 @@
   },
   "priceRange": "££",
   "makesOffer": [
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website design" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Photography" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "360 virtual tours" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Drone photography and video" } },
-    { "@type": "Offer", "price": "49", "priceCurrency": "GBP", "itemOffered": { "@type": "Service", "name": "Missed-call text-back" } },
-    { "@type": "Offer", "price": "69", "priceCurrency": "GBP", "itemOffered": { "@type": "Service", "name": "Website assistant" } }
+    { "@type": "Offer", "price": "795", "priceCurrency": "GBP", "itemOffered": { "@type": "Service", "name": "Website design" } },
+    { "@type": "Offer", "price": "35", "priceCurrency": "GBP", "itemOffered": { "@type": "Service", "name": "Hosting & care plan" } },
+    { "@type": "Offer", "price": "49", "priceCurrency": "GBP", "itemOffered": { "@type": "Service", "name": "Missed-call rescue" } },
+    { "@type": "Offer", "price": "69", "priceCurrency": "GBP", "itemOffered": { "@type": "Service", "name": "Website assistant" } },
+    { "@type": "Offer", "priceSpecification": { "@type": "PriceSpecification", "minPrice": "350", "priceCurrency": "GBP" }, "itemOffered": { "@type": "Service", "name": "Photography" } },
+    { "@type": "Offer", "priceSpecification": { "@type": "PriceSpecification", "minPrice": "400", "priceCurrency": "GBP" }, "itemOffered": { "@type": "Service", "name": "360 virtual tours" } },
+    { "@type": "Offer", "priceSpecification": { "@type": "PriceSpecification", "minPrice": "250", "priceCurrency": "GBP" }, "itemOffered": { "@type": "Service", "name": "Drone photography and video" } }
   ]
 }
 </script>
@@ -60,106 +71,216 @@
       <span>Longshore Studio</span>
     </a>
     <nav class="nav" aria-label="Main">
-      <a href="#for">Who it's for</a>
-      <a href="#estimate">Estimate</a>
-      <a href="#services">Services</a>
+      <a href="#demos">Try it</a>
+      <a href="#products">Products</a>
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
       <a href="#media">Media</a>
-      <a href="#smart-business">Smart Business</a>
-      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
     </nav>
-    <a class="btn btn-primary btn-sm" href="#contact" data-cta="header">Start a project</a>
+    <div class="header-actions">
+      <a class="header-tel" href="tel:+447886880560">07886 880560</a>
+      <a class="btn btn-primary btn-sm" href="#contact" data-cta="header">Get a quote</a>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
   </div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile" hidden>
+    <a href="#demos">Try it</a>
+    <a href="#products">Products</a>
+    <a href="#how">How it works</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#media">Media</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
 <main id="top">
 
 <section class="hero">
-  <div class="hero-split">
+  <div class="wrap hero-grid">
     <div class="hero-copy">
-      <div class="hero-copy-inner">
-        <p class="eyebrow">Longshore Studio</p>
-        <h1>Websites that bring in <em>calls and bookings</em>, not just compliments.</h1>
-        <p class="hero-sub">I build fast, modern sites for local businesses across East Lothian and Edinburgh — plus the photography, 360 tours and aerial work that make them worth booking. One person, start to finish, no account managers.</p>
-        <div class="hero-cta">
-          <a class="btn btn-primary" href="#contact" data-cta="hero">Start a project</a>
-          <a class="btn btn-ghost" href="#estimate">Get a rough estimate</a>
-        </div>
-        <div class="hero-chips">
-          <span class="tag"><span class="dot"></span>Trades &amp; builders</span>
-          <span class="tag"><span class="dot"></span>Holiday lets</span>
-          <span class="tag"><span class="dot"></span>Shops &amp; salons</span>
-          <span class="tag"><span class="dot"></span>Clinics &amp; studios</span>
-        </div>
+      <p class="eyebrow">Longshore Studio</p>
+      <h1>Your website should be doing more than <em>sitting there</em>.</h1>
+      <p class="hero-sub">I build websites and the systems behind them — so missed calls get answered, questions get handled, and enquiries actually reach you. One person, start to finish, real prices published up front.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#contact" data-cta="hero-primary">Get a quote</a>
+        <a class="btn btn-secondary" href="#demos" data-cta="hero-secondary">See it work</a>
       </div>
     </div>
-    <div class="hero-scene" aria-hidden="true">
-      <svg viewBox="0 0 700 700" preserveAspectRatio="xMidYMid slice" focusable="false">
-        <rect width="700" height="700" fill="#22301F"/>
-        <path class="wave-anim" d="M -50 220 Q 60 170 170 220 T 390 220 T 610 220 T 830 220" fill="none" stroke="#EDE6D3" stroke-width="4" opacity=".85" stroke-dasharray="6 10"/>
-        <path class="wave-anim" d="M -50 290 Q 60 240 170 290 T 390 290 T 610 290 T 830 290" fill="none" stroke="#B08A3E" stroke-width="5" opacity=".9"/>
-        <path class="wave-anim" d="M -50 360 Q 60 310 170 360 T 390 360 T 610 360 T 830 360" fill="none" stroke="#8A9088" stroke-width="3" opacity=".5"/>
-        <path class="wave-anim" d="M -50 430 Q 60 380 170 430 T 390 430 T 610 430 T 830 430" fill="none" stroke="#C9A25C" stroke-width="4" opacity=".65"/>
-        <path class="wave-anim" d="M -50 500 Q 60 450 170 500 T 390 500 T 610 500 T 830 500" fill="none" stroke="#3E5C55" stroke-width="3" opacity=".55"/>
-      </svg>
+    <div class="hero-manifest-wrap">
+    <div class="hero-manifest manifest rise" id="hero-manifest" aria-label="An illustrative example, not real live data">
+      <div class="manifest-head"><span><span class="dot dot--example" aria-hidden="true" role="presentation"></span>an example day, illustrated</span><span>not live data</span></div>
+      <div class="manifest-row is-pending">
+        <span class="manifest-time">09:14</span>
+        <span class="manifest-status manifest-status--info">enquiry</span>
+        <span class="manifest-desc">New enquiry from the site — 6-page website, North Berwick trade business</span>
+      </div>
+      <div class="manifest-row is-pending">
+        <span class="manifest-time">11:02</span>
+        <span class="manifest-status manifest-status--urgent">rescued</span>
+        <span class="manifest-desc">Missed call — <strong>text-back sent in 4s</strong>, caller replied within a minute</span>
+      </div>
+      <div class="manifest-row is-pending">
+        <span class="manifest-time">14:37</span>
+        <span class="manifest-status manifest-status--info">answered</span>
+        <span class="manifest-desc">Website assistant handled 3 pricing questions, captured 1 enquiry</span>
+      </div>
+      <div class="manifest-row is-pending">
+        <span class="manifest-time">16:20</span>
+        <span class="manifest-status manifest-status--done">booked</span>
+        <span class="manifest-desc">Quote tool used, estimate requested for a Standard site</span>
+      </div>
+    </div>
+    <p class="hero-manifest-caption">Illustrative — shows what gets tracked automatically, not a real client's data.</p>
     </div>
   </div>
 </section>
 
-<div class="tideline" aria-hidden="true">
-  <svg viewBox="0 0 1920 120" preserveAspectRatio="none">
-    <path d="M -100 55 Q 50 20 200 55 T 500 55 T 800 55 T 1100 55 T 1400 55 T 1700 55 T 2020 55" fill="none" stroke="#22301F" stroke-width="4" stroke-linecap="round" opacity="0.35"/>
-    <path d="M -100 78 Q 50 43 200 78 T 500 78 T 800 78 T 1100 78 T 1400 78 T 1700 78 T 2020 78" fill="none" stroke="#B08A3E" stroke-width="4" stroke-linecap="round" opacity="0.55"/>
-  </svg>
-</div>
-
-<section id="for">
+<section id="demos">
   <div class="wrap">
     <div class="section-head rise">
-      <p class="eyebrow">Who it's for</p>
-      <h2>If your business is in East Lothian or Edinburgh and your website isn't pulling its weight, that's the whole brief.</h2>
-      <p>Trade, shop, studio, clinic or holiday let — the fix is usually the same: fast, mobile-first, built around whatever actually gets someone to call, book or turn up.</p>
+      <p class="eyebrow">Try it</p>
+      <h2>Don't take my word for it — ask it something.</h2>
+      <p>Two of these are the real, working systems I build into client sites. Try to catch them out.</p>
     </div>
-    <div class="for-grid rise">
-      <span class="tag"><span class="dot"></span>Joiners &amp; builders</span>
-      <span class="tag"><span class="dot"></span>Roofers &amp; tradespeople</span>
-      <span class="tag"><span class="dot"></span>Holiday lets &amp; self-catering</span>
-      <span class="tag"><span class="dot"></span>Cafes &amp; restaurants</span>
-      <span class="tag"><span class="dot"></span>Hairdressers &amp; salons</span>
-      <span class="tag"><span class="dot"></span>Fitness &amp; instructors</span>
-      <span class="tag"><span class="dot"></span>Shops &amp; retail</span>
-      <span class="tag"><span class="dot"></span>Vets &amp; clinics</span>
-      <span class="tag"><span class="dot"></span>Estate &amp; letting agents</span>
-      <span class="tag"><span class="dot"></span>Clubs &amp; classes</span>
+    <div class="demo-grid rise">
+
+      <div class="demo-card">
+        <span class="demo-badge demo-badge--live">Live right now</span>
+        <h3>The website assistant</h3>
+        <p class="dek">This is the real thing, answering from facts I've approved — nothing invented, nothing guessed.</p>
+        <div class="demo-chip-row" id="demo-assistant-chips">
+          <button type="button" class="demo-chip" data-q="What does a standard website cost?">"What does a standard website cost?"</button>
+          <button type="button" class="demo-chip" data-q="Can you build me a custom booking calendar for free?">"Can you build me a custom booking calendar for free?"</button>
+          <button type="button" class="demo-chip" data-q="How does missed-call rescue actually work?">"How does missed-call rescue actually work?"</button>
+        </div>
+        <div class="demo-pointer" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 4 L20 20 M20 20 L20 10 M20 20 L10 20"/></svg>
+          <span>Opens the chat, bottom-right</span>
+        </div>
+        <p class="caption">It never guesses a price it isn't sure of — it says so and takes your details instead.</p>
+      </div>
+
+      <div class="demo-card" id="missed-call-demo">
+        <span class="demo-badge demo-badge--sim">Simulation of the real mechanism</span>
+        <h3>Missed-call rescue</h3>
+        <p class="dek">The code behind this is real and already built — this walks through exactly what it does.</p>
+        <div class="manifest" id="mc-manifest" aria-label="Simulated missed-call rescue sequence">
+          <div class="manifest-row is-pending" data-mc-row>
+            <span class="manifest-time">0:00</span>
+            <span class="manifest-status manifest-status--urgent">missed</span>
+            <span class="manifest-desc">Customer calls, no answer</span>
+          </div>
+          <div class="manifest-row is-pending" data-mc-row>
+            <span class="manifest-time">0:04</span>
+            <span class="manifest-status manifest-status--info">sent</span>
+            <span class="manifest-desc">"Hi, it's [Business] — sorry we missed your call. What can we help with?"</span>
+          </div>
+          <div class="manifest-row is-pending" data-mc-row>
+            <span class="manifest-time">0:41</span>
+            <span class="manifest-status manifest-status--info">reply</span>
+            <span class="manifest-desc">"Hi — need a quote for a leaking outdoor tap"</span>
+          </div>
+          <div class="manifest-row is-pending" data-mc-row>
+            <span class="manifest-time">0:42</span>
+            <span class="manifest-status manifest-status--done">forwarded</span>
+            <span class="manifest-desc">Owner notified instantly, marked as a lead</span>
+          </div>
+        </div>
+        <button type="button" class="demo-replay" id="mc-replay-btn">Replay</button>
+        <p class="caption">Voice reception (an AI receptionist that answers and books calls directly) is next on the roadmap once this line is live — not built yet, not claimed as live.</p>
+      </div>
+
     </div>
   </div>
 </section>
 
-<div class="tideline" aria-hidden="true">
-  <svg viewBox="0 0 1920 120" preserveAspectRatio="none">
-    <path d="M -100 55 Q 50 20 200 55 T 500 55 T 800 55 T 1100 55 T 1400 55 T 1700 55 T 2020 55" fill="none" stroke="#22301F" stroke-width="4" stroke-linecap="round" opacity="0.35"/>
-    <path d="M -100 78 Q 50 43 200 78 T 500 78 T 800 78 T 1100 78 T 1400 78 T 1700 78 T 2020 78" fill="none" stroke="#B08A3E" stroke-width="4" stroke-linecap="round" opacity="0.55"/>
-  </svg>
-</div>
+<section class="bigger-idea">
+  <div class="wrap rise">
+    <p class="eyebrow">Why</p>
+    <h2>A website that only describes your business isn't finished.</h2>
+    <p>Most small-business websites are a brochure: a few pages, a phone number, and then nothing happens until someone calls. Meanwhile the calls you miss, the questions you get asked on repeat, and the enquiries that go quiet overnight are the actual cost.</p>
+    <p>I build the site and the systems around it — so it answers questions itself, texts back a missed caller before they've hung up on someone else, and gets every enquiry in front of you the same day. Built by one person, in East Lothian, who answers the phone and holds the camera too.</p>
+
+    <div class="scenario-manifest manifest">
+      <div class="scenario-row">
+        <svg class="scenario-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 3v18M18 3v18M6 7h12M6 11h12M6 15h12M6 19h12"/></svg>
+        <span class="scenario-desc"><strong>You're up a ladder, mid-job, phone rings.</strong> The caller gets a text back in your name before they've had the chance to ring the next name on their list.</span>
+      </div>
+      <div class="scenario-row">
+        <svg class="scenario-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+        <span class="scenario-desc"><strong>It's 9pm on a Sunday and someone's on your site.</strong> They ask about pricing, opening hours, whether you take dogs — and get a real answer, not silence until Monday.</span>
+      </div>
+      <div class="scenario-row">
+        <svg class="scenario-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="1.5"/><path d="M9 3.5h6v2H9zM8 10h8M8 14h8M8 17h5"/></svg>
+        <span class="scenario-desc"><strong>You're with a customer and can't check your phone.</strong> The next enquiry doesn't wait for you to be free — it's logged, and you see it the moment you're clear.</span>
+      </div>
+      <div class="scenario-row">
+        <svg class="scenario-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="1.5"/><path d="M3.5 9h17M8 13h4"/></svg>
+        <span class="scenario-desc"><strong>You come home tired and don't want admin.</strong> One monthly report tells you exactly what got rescued and what needs a callback — nothing to dig for.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="products">
+  <div class="wrap">
+    <div class="section-head rise">
+      <p class="eyebrow">What I offer</p>
+      <h2>Five things you can buy from me, plainly.</h2>
+      <p>Not dozens of services — five things, each doing a real job for your business.</p>
+    </div>
+    <div class="product-list rise">
+      <a class="product-row is-featured" href="#pricing" data-cta="product-websites">
+        <span class="product-index">01</span>
+        <span class="product-body"><h3>Websites</h3><p>Not just a website. A website that works for your business — fast, built to convert, and yours outright.</p></span>
+        <span class="product-price">From<strong>£795</strong><svg class="product-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M17 7H9M17 7v8"/></svg></span>
+      </a>
+      <a class="product-row is-featured" href="#pricing" data-cta="product-smart-business">
+        <span class="product-index">02</span>
+        <span class="product-body"><h3>Smart Business Systems</h3><p>Bookings, quotes, enquiries and follow-ups, built into the site — not a separate platform to learn.</p></span>
+        <span class="product-price">From<strong>£49/mo</strong><small>per product</small><svg class="product-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M17 7H9M17 7v8"/></svg></span>
+      </a>
+      <a class="product-row" href="#pricing" data-cta="product-assistant">
+        <span class="product-index">03</span>
+        <span class="product-body"><h3>Website Assistant</h3><p>Give your customers answers instantly, day or night — only ever from facts you've approved.</p></span>
+        <span class="product-price"><strong>£69/mo</strong><svg class="product-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M17 7H9M17 7v8"/></svg></span>
+      </a>
+      <a class="product-row" href="#pricing" data-cta="product-missed-call">
+        <span class="product-index">04</span>
+        <span class="product-body"><h3>Missed-Call Rescue</h3><p>A missed call gets an instant text back in your name — so the job doesn't go to whoever answers next.</p></span>
+        <span class="product-price"><strong>£49/mo</strong><svg class="product-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M17 7H9M17 7v8"/></svg></span>
+      </a>
+      <a class="product-row" href="#pricing" data-cta="product-care">
+        <span class="product-index">05</span>
+        <span class="product-body"><h3>Hosting &amp; Care</h3><p>Hosting, updates, backups and small changes handled, so the site stays fast without you thinking about it.</p></span>
+        <span class="product-price">From<strong>£35/mo</strong><svg class="product-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M17 7H9M17 7v8"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
 
 <section id="estimate">
   <div class="wrap">
     <div class="section-head rise">
-      <p class="eyebrow">Try it yourself</p>
+      <p class="eyebrow">Quote tool</p>
       <h2>Get a rough estimate in ten seconds.</h2>
-      <p>Play with it — this is the same maths I quote from, live on the page. Fixed price, no waiting for a callback.</p>
+      <p>Play with it — this is the same maths I quote from, live on the page.</p>
     </div>
     <div class="estimate-panel rise">
       <div>
         <div class="est-group">
-          <h4>What kind of business?</h4>
+          <p class="est-label">What kind of business?</p>
           <div class="est-pills" data-group="type">
             <button type="button" class="est-pill active" data-value="trade" data-note="Most trades start with Standard and move up to Local once they want dedicated pages for each area they cover.">Trade / local business</button>
-            <button type="button" class="est-pill" data-value="holiday" data-note="Most holiday let clients add the 360 tour — guests book on how the place looks, not the copy.">Holiday let / hospitality</button>
-            <button type="button" class="est-pill" data-value="retail" data-note="Shops and studios usually pair Standard with photography — product and interior shots earn their keep fast.">Shop / studio / other</button>
+            <button type="button" class="est-pill" data-value="holiday" data-note="Most hospitality clients add the 360 tour and the website assistant for out-of-hours questions.">Holiday let / hospitality</button>
+            <button type="button" class="est-pill" data-value="retail" data-note="Shops and studios usually pair Standard with photography and missed-call rescue.">Shop / studio / other</button>
           </div>
         </div>
         <div class="est-group">
-          <h4>Site scope</h4>
+          <p class="est-label">Site scope</p>
           <div class="est-pills" data-group="scope">
             <button type="button" class="est-pill" data-value="795">One-page — £795</button>
             <button type="button" class="est-pill active" data-value="1450">Up to six pages — £1,450</button>
@@ -167,11 +288,10 @@
           </div>
         </div>
         <div class="est-group">
-          <h4>Add media (optional)</h4>
+          <p class="est-label">Add Smart Business (optional, monthly — not in the total below)</p>
           <div class="est-pills" data-group="addons">
-            <button type="button" class="est-pill" data-value="350">Photography — £350</button>
-            <button type="button" class="est-pill" data-value="400">360 tour — £400</button>
-            <button type="button" class="est-pill" data-value="600">Drone stills &amp; video — £600</button>
+            <button type="button" class="est-pill" data-value="49">Missed-call rescue — £49/mo</button>
+            <button type="button" class="est-pill" data-value="69">Website assistant — £69/mo</button>
           </div>
         </div>
       </div>
@@ -179,261 +299,126 @@
         <p class="lbl">Rough estimate</p>
         <p class="total">£<span id="est-total">1,450</span><span class="unit"> one-off</span></p>
         <p class="note" id="est-note">Most trades start with Standard and move up to Local once they want dedicated pages for each area they cover.</p>
-        <a class="btn btn-primary" href="#contact" id="estimate-cta">Get a proper quote</a>
-        <p class="sb-note">Also missing calls or answering the same questions on repeat? See <a href="#smart-business">Smart Business</a> below — separate monthly add-ons, not part of this one-off total.</p>
+        <p class="note" id="est-addon-note" style="display:none;"></p>
+        <a class="btn btn-primary" href="#contact" id="estimate-cta" data-cta="estimate">Get a proper quote</a>
       </div>
     </div>
   </div>
 </section>
 
-<div class="tideline" aria-hidden="true">
-  <svg viewBox="0 0 1920 120" preserveAspectRatio="none">
-    <path d="M -100 55 Q 50 20 200 55 T 500 55 T 800 55 T 1100 55 T 1400 55 T 1700 55 T 2020 55" fill="none" stroke="#22301F" stroke-width="4" stroke-linecap="round" opacity="0.35"/>
-    <path d="M -100 78 Q 50 43 200 78 T 500 78 T 800 78 T 1100 78 T 1400 78 T 1700 78 T 2020 78" fill="none" stroke="#B08A3E" stroke-width="4" stroke-linecap="round" opacity="0.55"/>
-  </svg>
-</div>
-
-<section id="services">
-  <div class="wrap">
-    <div class="section-head rise">
-      <p class="eyebrow">Services &amp; pricing</p>
-      <h2>Prices published on purpose. No quote-fishing.</h2>
-      <p>Whichever site you need, it's built the same way: fast, tested on a real phone, and yours outright.</p>
-    </div>
-    <div class="card-grid rise">
-      <div class="info-card">
-        <p class="tag-label">Starter</p>
-        <h3>One-page site</h3>
-        <ul>
-          <li>Single page, built to convert <em>Included</em></li>
-          <li>Mobile-first, fast-loading <em>Included</em></li>
-          <li>Contact form &amp; map <em>Included</em></li>
-        </ul>
-        <p class="from">£795<span>one-off</span></p>
-      </div>
-      <div class="info-card featured">
-        <p class="tag-label">Standard — best for most businesses</p>
-        <h3>Up to six pages</h3>
-        <ul>
-          <li>Full site, up to 6 pages <em>Included</em></li>
-          <li>Reviews pulled onto the homepage <em>Included</em></li>
-          <li>Care plan available <em>from £35/mo</em></li>
-        </ul>
-        <p class="from">£1,450<span>one-off</span></p>
-      </div>
-      <div class="info-card">
-        <p class="tag-label">Local</p>
-        <h3>Multi-area SEO</h3>
-        <ul>
-          <li>Everything in Standard <em>Included</em></li>
-          <li>Dedicated page per service area <em>Included</em></li>
-          <li>Local keyword research &amp; schema <em>Included</em></li>
-          <li>Search Console &amp; Analytics setup <em>Included</em></li>
-        </ul>
-        <p class="from">£2,400<span>one-off</span></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="tideline" aria-hidden="true">
-  <svg viewBox="0 0 1920 120" preserveAspectRatio="none">
-    <path d="M -100 55 Q 50 20 200 55 T 500 55 T 800 55 T 1100 55 T 1400 55 T 1700 55 T 2020 55" fill="none" stroke="#22301F" stroke-width="4" stroke-linecap="round" opacity="0.35"/>
-    <path d="M -100 78 Q 50 43 200 78 T 500 78 T 800 78 T 1100 78 T 1400 78 T 1700 78 T 2020 78" fill="none" stroke="#B08A3E" stroke-width="4" stroke-linecap="round" opacity="0.55"/>
-  </svg>
-</div>
-
-<section id="media">
-  <div class="wrap">
-    <div class="section-head rise">
-      <p class="eyebrow">Photography, 360 &amp; aerial</p>
-      <h2>The visuals that make people actually want to book.</h2>
-      <p>Shot by me, on the same visit if it suits — one person, one invoice, no separate agency to chase.</p>
-    </div>
-    <div class="card-grid rise">
-      <div class="info-card">
-        <p class="tag-label">Photography</p>
-        <h3>Half day — £350</h3>
-        <ul>
-          <li>Interiors &amp; exteriors <em>Included</em></li>
-          <li>Edited, web-ready gallery <em>Included</em></li>
-          <li>Full day <em>£550</em></li>
-        </ul>
-        <p class="from">£350<span>half day</span></p>
-      </div>
-      <div class="info-card featured">
-        <p class="tag-label">360 tour — popular for lets</p>
-        <h3>Virtual walkthrough</h3>
-        <ul>
-          <li>Full property walkthrough <em>Included</em></li>
-          <li>Embeddable on your site <em>Included</em></li>
-          <li>Google Business listing version <em>Included</em></li>
-        </ul>
-        <p class="from">£400<span>per property</span></p>
-      </div>
-      <div class="info-card">
-        <p class="tag-label">Aerial</p>
-        <h3>Drone stills &amp; video</h3>
-        <ul>
-          <li>Stills package <em>£250</em></li>
-          <li>Video package <em>£450</em></li>
-          <li>Both, same visit <em>from £600</em></li>
-        </ul>
-        <p class="from">£250<span>from</span></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="tideline" aria-hidden="true">
-  <svg viewBox="0 0 1920 120" preserveAspectRatio="none">
-    <path d="M -100 55 Q 50 20 200 55 T 500 55 T 800 55 T 1100 55 T 1400 55 T 1700 55 T 2020 55" fill="none" stroke="#22301F" stroke-width="4" stroke-linecap="round" opacity="0.35"/>
-    <path d="M -100 78 Q 50 43 200 78 T 500 78 T 800 78 T 1100 78 T 1400 78 T 1700 78 T 2020 78" fill="none" stroke="#B08A3E" stroke-width="4" stroke-linecap="round" opacity="0.55"/>
-  </svg>
-</div>
-
-<section id="smart-business" class="smart-business">
-  <div class="wrap">
-    <div class="section-head rise">
-      <p class="eyebrow">New — Smart Business</p>
-      <h2>Your customers get an answer even when you can't stop working.</h2>
-      <p>Two small monthly add-ons, not another platform to learn: missed calls get an instant text back, and your website answers common questions itself — honestly, from facts you've approved, day or night.</p>
-    </div>
-
-    <div class="sb-demo-grid rise">
-      <div class="proof-card proof-card--calls" id="sb-phone-demo">
-        <h3>Never Miss a Job</h3>
-        <p class="dek">Your phone diverts to a dedicated number when you don't answer. The caller gets this, seconds later, in your name.</p>
-        <div class="phone-thread" aria-label="Simulated text message exchange">
-          <div class="sb-msg sb-msg-caller">Missed call from a customer</div>
-          <div class="sb-msg sb-msg-biz">Hi, it's [Business] — sorry we missed your call. What can we help with? We'll ring you back within the hour.</div>
-          <div class="sb-msg sb-msg-caller">Hi — need a quote for a leaking outdoor tap</div>
-          <div class="sb-msg sb-msg-note">→ Forwarded to the owner instantly, marked as a lead</div>
-        </div>
-        <button type="button" class="sb-replay" id="sb-replay-btn">Replay</button>
-        <p class="caption">Simulation of a real rescue — not a live line.</p>
-      </div>
-
-      <div class="proof-card proof-card--assistant">
-        <h3>A Website That Answers Back</h3>
-        <p class="dek">This is the real thing, live on this page right now. Try to catch it out.</p>
-        <div class="sb-chip-row" id="sb-assistant-chips">
-          <button type="button" class="sb-chip" data-q="What does a standard website cost?">"What does a standard website cost?"</button>
-          <button type="button" class="sb-chip" data-q="How much is a full-day photography shoot in October?">"How much is a full-day photography shoot in October?"</button>
-          <button type="button" class="sb-chip" data-q="Can you build me a custom booking calendar for free?">"Can you build me a custom booking calendar for free?"</button>
-        </div>
-        <div class="sb-pointer" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 4 L20 20 M20 20 L20 10 M20 20 L10 20"/></svg>
-          <span>Opens the chat bottom-right</span>
-        </div>
-        <p class="caption">It never guesses a price it isn't sure of — it says so and takes your details instead.</p>
-      </div>
-    </div>
-
-    <div class="sb-steps-wrap">
-      <div class="section-head rise" style="margin-bottom:28px;">
-        <p class="eyebrow">How it gets set up</p>
-        <h3 style="font-size:clamp(24px,3.4vw,34px);">Three steps, done with you, not to you.</h3>
-      </div>
-      <div class="steps rise">
-        <div class="step"><p class="num">One</p><h3>Chat</h3><p>Which one (or both) makes sense for how your customers actually reach you.</p></div>
-        <div class="step"><p class="num">Two</p><h3>Set up together</p><p>Your call diverted, or your facts approved for the assistant — I do the setup, you approve every word.</p></div>
-        <div class="step"><p class="num">Three</p><h3>Live in days</h3><p>No contract, cancel any time. A monthly report shows exactly what it rescued.</p></div>
-      </div>
-    </div>
-
-    <div class="sb-offer-banner rise"><strong>Founding-client offer</strong> — first month free and the setup fee waived for the first 5 Smart Business clients. <span class="sb-offer-count">0 / 5 taken</span></div>
-
-    <div class="card-grid rise">
-      <div class="info-card">
-        <p class="tag-label">Never Miss a Job</p>
-        <h3>Missed-call text-back</h3>
-        <ul>
-          <li>Instant SMS in your name <em>Included</em></li>
-          <li>Replies forwarded to you <em>Included</em></li>
-          <li>Monthly "calls rescued" report <em>Included</em></li>
-        </ul>
-        <p class="from">£49<span>per month</span></p>
-      </div>
-      <div class="info-card featured">
-        <p class="tag-label">Best value — covers both channels</p>
-        <h3>Never Miss a Job + Website Assistant</h3>
-        <ul>
-          <li>Both products, one relationship <em>Included</em></li>
-          <li>One monthly report for both <em>Included</em></li>
-          <li>Cheaper than buying separately <em>Included</em></li>
-        </ul>
-        <p class="from">£99<span>per month</span></p>
-      </div>
-      <div class="info-card">
-        <p class="tag-label">A Website That Answers Back</p>
-        <h3>Website assistant</h3>
-        <ul>
-          <li>Answers only approved facts <em>Included</em></li>
-          <li>Never guesses a price <em>Included</em></li>
-          <li>Set-up &amp; knowledge base build <em>£249 once</em></li>
-        </ul>
-        <p class="from">£69<span>per month</span></p>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:28px;">
-      <a class="btn btn-primary" href="#contact" data-cta="smart-business">Ask about Smart Business</a>
-      <p class="sb-note">No contract, cancel any time. Both bundle down further alongside a website care plan.</p>
-    </div>
-  </div>
-</section>
-
-<div class="tideline" aria-hidden="true">
-  <svg viewBox="0 0 1920 120" preserveAspectRatio="none">
-    <path d="M -100 55 Q 50 20 200 55 T 500 55 T 800 55 T 1100 55 T 1400 55 T 1700 55 T 2020 55" fill="none" stroke="#22301F" stroke-width="4" stroke-linecap="round" opacity="0.35"/>
-    <path d="M -100 78 Q 50 43 200 78 T 500 78 T 800 78 T 1100 78 T 1400 78 T 1700 78 T 2020 78" fill="none" stroke="#B08A3E" stroke-width="4" stroke-linecap="round" opacity="0.55"/>
-  </svg>
-</div>
-
-<section id="process">
+<section id="how">
   <div class="wrap">
     <div class="section-head rise">
       <p class="eyebrow">How it works</p>
-      <h2>Four steps, two to four weeks, no mystery.</h2>
+      <h2>Five steps, no mystery.</h2>
     </div>
-    <div class="steps rise">
-      <div class="step"><p class="num">One</p><h3>Chat</h3><p>A call or a form — what's frustrating about what you've got now, and what you actually need it to do.</p></div>
-      <div class="step"><p class="num">Two</p><h3>Plan</h3><p>Fixed price, fixed scope, agreed before anything's built. 50% deposit to start.</p></div>
-      <div class="step"><p class="num">Three</p><h3>Build</h3><p>Built, then two rounds of revisions — one consolidated set of feedback each round.</p></div>
-      <div class="step"><p class="num">Four</p><h3>Launch</h3><p>Live, tested on a real phone, and yours. Care plan optional from there.</p></div>
+    <div class="steps-manifest rise">
+      <div class="step-row"><span class="step-num">01</span><span class="step-status">first</span><span class="step-body"><h3>Tell me what's not working</h3><p>A call or a form — what's frustrating about what you've got now.</p></span></div>
+      <div class="step-row"><span class="step-num">02</span><span class="step-status">planned</span><span class="step-body"><h3>I plan it properly</h3><p>Fixed price, fixed scope, agreed before anything's built.</p></span></div>
+      <div class="step-row"><span class="step-num">03</span><span class="step-status">built</span><span class="step-body"><h3>I build it</h3><p>Then two rounds of revisions — one consolidated set of feedback each round.</p></span></div>
+      <div class="step-row"><span class="step-num">04</span><span class="step-status">live</span><span class="step-body"><h3>It goes live</h3><p>Tested on a real phone, yours outright.</p></span></div>
+      <div class="step-row"><span class="step-num">05</span><span class="step-status">ongoing</span><span class="step-body"><h3>I keep it running</h3><p>Care plan and Smart Business systems optional from there — cancel any time.</p></span></div>
     </div>
   </div>
 </section>
 
-<div class="tideline" aria-hidden="true">
-  <svg viewBox="0 0 1920 120" preserveAspectRatio="none">
-    <path d="M -100 55 Q 50 20 200 55 T 500 55 T 800 55 T 1100 55 T 1400 55 T 1700 55 T 2020 55" fill="none" stroke="#22301F" stroke-width="4" stroke-linecap="round" opacity="0.35"/>
-    <path d="M -100 78 Q 50 43 200 78 T 500 78 T 800 78 T 1100 78 T 1400 78 T 1700 78 T 2020 78" fill="none" stroke="#B08A3E" stroke-width="4" stroke-linecap="round" opacity="0.55"/>
-  </svg>
-</div>
-
-<section id="about">
+<section id="pricing">
   <div class="wrap">
-    <div class="about-grid rise">
-      <div>
-        <p class="eyebrow">About</p>
-        <h2 style="font-size:clamp(26px,3.6vw,36px);margin-bottom:18px;">One person, based on the East Coast, no agency overhead.</h2>
-        <p style="color:var(--pine-70);max-width:520px;">Longshore Studio is me — I build the site, I answer the phone, and if a project calls for it, I'm the one behind the camera too.</p>
+    <div class="section-head rise">
+      <p class="eyebrow">Pricing</p>
+      <h2>Prices published on purpose.</h2>
+      <p>No quote-fishing, no "it depends" — here's what things actually cost.</p>
+    </div>
+
+    <div class="offer-banner rise"><strong>Founding-client offer</strong> — first month free, setup fee waived. First 5 Smart Business clients only. <span class="offer-count">0 / 5 taken</span></div>
+
+    <div class="price-manifest manifest rise">
+      <div class="price-row is-featured">
+        <div class="price-row-head">
+          <span class="price-tag">Websites — steer here</span>
+          <span class="price-figure">£1,450<span>one-off</span></span>
+        </div>
+        <h3>Standard site</h3>
+        <div class="price-lines">
+          <span>Up to 6 pages <em>Included</em></span>
+          <span>Google Business Profile optimisation <em>Included</em></span>
+          <span>Schema markup <em>Included</em></span>
+          <span>One-page also available <em>£795</em></span>
+        </div>
+        <a class="btn btn-secondary btn-sm" href="#contact" data-cta="pricing-websites">Get a quote</a>
       </div>
-      <div class="about-list">
-        <div><span class="dot"></span><div><strong>Local</strong><span>East Lothian &amp; Edinburgh, in person where it helps.</span></div></div>
-        <div><span class="dot"></span><div><strong>Fast sites</strong><span>Built to load quickly and pass real mobile performance checks, not just look good in a screenshot.</span></div></div>
-        <div><span class="dot"></span><div><strong>Straight pricing</strong><span>Published rates, fixed scope, 50% deposit — no surprise invoices.</span></div></div>
+      <div class="price-row is-featured">
+        <div class="price-row-head">
+          <span class="price-tag">Smart Business — bundle</span>
+          <span class="price-figure">£99<span>per month</span></span>
+        </div>
+        <h3>Assistant + missed-call rescue</h3>
+        <div class="price-lines">
+          <span>Both products, one relationship <em>Included</em></span>
+          <span>One monthly report for both <em>Included</em></span>
+          <span>Cheaper than buying separately <em>Included</em></span>
+          <span>Founding offer <em>Applies</em></span>
+        </div>
+        <a class="btn btn-primary btn-sm" href="#contact" data-cta="pricing-bundle">Ask about Smart Business</a>
       </div>
+      <div class="price-row">
+        <div class="price-row-head">
+          <span class="price-tag">Hosting &amp; care</span>
+          <span class="price-figure">£35<span>per month</span></span>
+        </div>
+        <h3>Essential care plan</h3>
+        <div class="price-lines">
+          <span>Hosting, SSL, backups, uptime <em>Included</em></span>
+          <span>30 min/month content changes <em>Included</em></span>
+          <span>Growth plan available <em>from £150/mo</em></span>
+          <span>Minimum term <em>3 months</em></span>
+        </div>
+        <a class="btn btn-secondary btn-sm" href="#contact" data-cta="pricing-care">Ask about care plans</a>
+      </div>
+    </div>
+    <p class="sb-note" style="text-align:center;margin-top:24px;">Missed-call rescue £49/mo standalone (£39/mo bundled) · Website assistant £69/mo standalone (£49/mo bundled) · £99 and £249 setup respectively.</p>
+  </div>
+</section>
+
+<section id="media" class="media-section">
+  <div class="wrap">
+    <div class="section-head rise">
+      <p class="eyebrow">Also available</p>
+      <h2>Make your business look as good as it works.</h2>
+      <p>Photography, 360 tours and drone work — shot by me, often on the same visit as a build. 20% off when booked alongside a website.</p>
+    </div>
+    <div class="media-manifest manifest rise">
+      <div class="manifest-row">
+        <svg class="media-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.5"/></svg>
+        <span class="manifest-time">Photo</span><span class="manifest-status manifest-status--info">from £350</span><span class="manifest-desc">Half/full-day photography — interiors, exteriors, product and process shots, the difference between stock photos and your real work.</span></div>
+      <div class="manifest-row">
+        <svg class="media-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><circle cx="12" cy="12" r="3"/><path d="M7 7l1.5 1.5M17 7l-1.5 1.5M7 17l1.5-1.5M17 17l-1.5-1.5"/></svg>
+        <span class="manifest-time">Drone</span><span class="manifest-status manifest-status--info">from £250</span><span class="manifest-desc">Stills &amp; video — property and venue context where height genuinely adds information.</span></div>
+      <div class="manifest-row">
+        <svg class="media-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><ellipse cx="12" cy="12" rx="9" ry="4.5"/><ellipse cx="12" cy="12" rx="4" ry="9"/></svg>
+        <span class="manifest-time">360</span><span class="manifest-status manifest-status--info">from £400</span><span class="manifest-desc">Virtual tours — lets a guest or customer pre-qualify a space before they book.</span></div>
+    </div>
+    <p class="sb-note" style="margin-top:14px;">Real photography, not stock — assets shown here will be Ewan's own work as builds are completed.</p>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="wrap rise">
+    <p class="eyebrow">Get started</p>
+    <h2>Ready for your website to do more of the work?</h2>
+    <p>Tell me what you're working with — current site, what's frustrating you, roughly when you need it. That's all I need to start.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#contact" data-cta="final-primary">Get a quote</a>
+      <a class="btn btn-secondary" href="tel:+447886880560">Or call 07886 880560</a>
     </div>
   </div>
 </section>
 
-<section class="contact" id="contact">
+<section id="contact">
   <div class="wrap">
     <div class="section-head rise">
       <p class="eyebrow">Get in touch</p>
-      <h2 style="font-size:clamp(28px,4.4vw,44px);">Tell me what you're working with.</h2>
+      <h2>Tell me what you're working with.</h2>
       <p>Current website, rough timescale, and what's frustrating you about what you've got — that's all I need to start.</p>
     </div>
     <div class="contact-grid rise">
@@ -443,7 +428,6 @@
           <div><dt>Phone</dt><dd><a href="tel:+447886880560">07886 880560</a></dd></div>
           <div><dt>Based</dt><dd>East Lothian, Scotland</dd></div>
           <div><dt>Response time</dt><dd>Within one working day</dd></div>
-          <div><dt>Also ask about</dt><dd><a href="#smart-business">Missed-call rescue &amp; the website assistant</a></dd></div>
         </dl>
       </div>
       <form class="enquiry" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
@@ -457,6 +441,15 @@
         <input type="hidden" name="utm_content">
         <div><label for="n">Name</label><input id="n" name="name" type="text" required></div>
         <div><label for="e">Email</label><input id="e" name="email" type="email" required></div>
+        <div>
+          <label id="enquiry-type-label">What are you enquiring about?</label>
+          <div class="enquiry-type" role="group" aria-labelledby="enquiry-type-label">
+            <input type="radio" id="et-website" name="enquiry_type" value="Website" checked><label for="et-website">Website</label>
+            <input type="radio" id="et-smart" name="enquiry_type" value="Smart Business"><label for="et-smart">Smart Business</label>
+            <input type="radio" id="et-media" name="enquiry_type" value="Media"><label for="et-media">Media</label>
+            <input type="radio" id="et-unsure" name="enquiry_type" value="Not sure"><label for="et-unsure">Not sure</label>
+          </div>
+        </div>
         <div><label for="m">What you're working with</label><textarea id="m" name="message" placeholder="Current website, rough timescale, what's frustrating you about the one you've got."></textarea></div>
         <button class="btn btn-primary btn-full" type="submit" style="margin-top:6px;" id="contact-submit">Send it over</button>
         <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
@@ -470,7 +463,7 @@
 <footer>
   <div class="wrap footer-inner">
     <div class="footer-brand">
-      <svg viewBox="0 0 400 400" aria-hidden="true"><circle cx="200" cy="200" r="196" fill="#2C3D28"/><path d="M85 188 Q 122 156 160 188 T 235 188 T 310 188" fill="none" stroke="#EDE6D3" stroke-width="24" stroke-linecap="round"/><path d="M85 236 Q 122 204 160 236 T 235 236 T 310 236" fill="none" stroke="#B08A3E" stroke-width="24" stroke-linecap="round"/></svg>
+      <svg viewBox="0 0 400 400" aria-hidden="true"><circle cx="200" cy="200" r="196" fill="var(--sand)"/><path d="M85 188 Q 122 156 160 188 T 235 188 T 310 188" fill="none" stroke="var(--pine)" stroke-width="24" stroke-linecap="round"/><path d="M85 236 Q 122 204 160 236 T 235 236 T 310 236" fill="none" stroke="var(--dune)" stroke-width="24" stroke-linecap="round"/></svg>
       <span>Longshore Studio</span>
     </div>
     <span>© Longshore Studio, East Lothian.</span>
@@ -480,10 +473,13 @@
 
 <script>
 (function(){
+  // ---------- estimate calculator (one-off total only — Smart Business is monthly, shown separately) ----------
   const groups = document.querySelectorAll('.est-pills');
   const totalEl = document.getElementById('est-total');
   const noteEl = document.getElementById('est-note');
+  const addonNoteEl = document.getElementById('est-addon-note');
   let shownTotal = 1450;
+  let animFrame = null;
 
   function selections(){
     const state = {type:'trade', scope:1450, addons:[], note:''};
@@ -502,183 +498,186 @@
   }
 
   function animateTo(target){
-    const start = shownTotal, dur = 420, t0 = performance.now();
+    // Cancel any in-flight animation first — otherwise rapid pill clicks
+    // start concurrent rAF chains that race to write shownTotal/totalEl,
+    // and the total can settle on whichever finishes last rather than
+    // the most recently clicked pill.
+    if (animFrame) cancelAnimationFrame(animFrame);
+    const start = shownTotal, dur = 400, t0 = performance.now();
     function frame(t){
       const p = Math.min(1, (t - t0) / dur);
       const eased = 1 - Math.pow(1 - p, 3);
       const val = Math.round(start + (target - start) * eased);
       totalEl.textContent = val.toLocaleString('en-GB');
-      if (p < 1) requestAnimationFrame(frame); else shownTotal = target;
+      if (p < 1) animFrame = requestAnimationFrame(frame);
+      else { shownTotal = target; animFrame = null; }
     }
-    requestAnimationFrame(frame);
+    animFrame = requestAnimationFrame(frame);
   }
 
   function update(){
     const s = selections();
-    const total = s.scope + s.addons.reduce((a,b) => a+b, 0);
-    animateTo(total);
+    animateTo(s.scope);
     noteEl.textContent = s.note;
+    if (s.addons.length) {
+      const names = s.addons.map(v => v === 49 ? 'Missed-call rescue (£49/mo)' : v === 69 ? 'Website assistant (£69/mo)' : '').filter(Boolean);
+      addonNoteEl.textContent = 'Plus, if added: ' + names.join(' + ') + ' — billed monthly, not part of the one-off total above.';
+      addonNoteEl.style.display = 'block';
+    } else {
+      addonNoteEl.style.display = 'none';
+    }
   }
 
   groups.forEach(g => {
-    const isMulti = g.dataset.group === 'addons';
-    const groupKey = g.dataset.group;
-    g.querySelectorAll('.est-pill').forEach(pill => {
-      pill.addEventListener('click', () => {
-        if (isMulti) {
-          pill.classList.toggle('active');
-        } else {
-          g.querySelectorAll('.est-pill').forEach(p => p.classList.remove('active'));
-          pill.classList.add('active');
-        }
-        update();
-
-        if (groupKey === 'scope' && window.trackEvent) {
-          window.trackEvent('select_package', {
-            package_name: pill.textContent.trim(),
-            package_value: Number(pill.dataset.value)
-          });
-        }
-        if (groupKey === 'addons' && window.trackEvent) {
-          window.trackEvent('select_media_addon', {
-            addon_name: pill.textContent.trim(),
-            addon_value: Number(pill.dataset.value),
-            selected: pill.classList.contains('active')
-          });
-        }
-      });
+    g.addEventListener('click', e => {
+      const pill = e.target.closest('.est-pill');
+      if (!pill) return;
+      const key = g.dataset.group;
+      if (key === 'addons') {
+        pill.classList.toggle('active');
+      } else {
+        g.querySelectorAll('.est-pill').forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+      }
+      update();
     });
   });
 
-  update();
-
-  function withAttribution(params){
-    const attribution = window.getAttribution ? window.getAttribution() : {};
-    return Object.assign({}, params, attribution);
-  }
-
-  const estimateCta = document.getElementById('estimate-cta');
-  if (estimateCta) {
-    estimateCta.addEventListener('click', function(){
-      if (!window.trackEvent) return;
-      const s = selections();
-      window.trackEvent('estimate_complete', withAttribution({
-        business_type: s.type,
-        package_value: s.scope,
-        media_addons: s.addons.join(','),
-        estimate_total: s.scope + s.addons.reduce((a,b) => a + b, 0)
-      }));
-    });
-  }
-
+  // ---------- contact form ----------
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
-    const statusEl = document.getElementById('form-status');
     const submitBtn = document.getElementById('contact-submit');
+    const statusEl = document.getElementById('form-status');
+    function withAttribution(base){
+      if (window.getAttribution) return Object.assign({}, base, window.getAttribution());
+      return base;
+    }
     contactForm.addEventListener('submit', function(e){
       e.preventDefault();
       submitBtn.disabled = true;
-      statusEl.className = 'form-status';
       statusEl.textContent = '';
-
+      statusEl.classList.remove('is-visible', 'err');
+      const formData = new FormData(contactForm);
+      const enquiryType = formData.get('enquiry_type') || 'Not sure';
+      formData.set('subject', 'New enquiry (' + enquiryType + ') — Longshore Studio site');
       const attribution = window.getAttribution ? window.getAttribution() : {};
-      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'].forEach(function(field){
-        const input = contactForm.querySelector('[name="' + field + '"]');
-        if (input) input.value = attribution[field] || '';
-      });
-
-      fetch(contactForm.action, {
-        method: 'POST',
-        body: new FormData(contactForm),
-        headers: { 'Accept': 'application/json' }
-      })
-      .then(function(res){ return res.json(); })
-      .then(function(data){
-        submitBtn.disabled = false;
-        if (data && data.success) {
-          statusEl.textContent = 'Sent — I’ll get back to you within one working day.';
-          statusEl.classList.add('is-visible', 'ok');
-          contactForm.reset();
-          if (window.trackEvent) {
-            window.trackEvent('generate_lead', withAttribution({
-              form_name: 'contact',
-              currency: 'GBP',
-              value: 0
-            }));
+      Object.keys(attribution).forEach(k => formData.set(k, attribution[k]));
+      fetch(contactForm.action, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } })
+        .then(r => r.json())
+        .then(data => {
+          submitBtn.disabled = false;
+          if (data.success) {
+            statusEl.textContent = "Sent — I'll reply within one working day.";
+            statusEl.classList.add('is-visible');
+            contactForm.reset();
+            if (window.trackEvent) {
+              window.trackEvent('generate_lead', withAttribution({
+                form_name: 'contact',
+                enquiry_type: enquiryType,
+                currency: 'GBP',
+                value: 0
+              }));
+            }
+          } else {
+            statusEl.textContent = 'Something went wrong sending that — try again, or email hello@longshorestudio.co.uk directly.';
+            statusEl.classList.add('is-visible', 'err');
           }
-        } else {
+        })
+        .catch(function(){
+          submitBtn.disabled = false;
           statusEl.textContent = 'Something went wrong sending that — try again, or email hello@longshorestudio.co.uk directly.';
           statusEl.classList.add('is-visible', 'err');
-        }
-      })
-      .catch(function(){
-        submitBtn.disabled = false;
-        statusEl.textContent = 'Something went wrong sending that — try again, or email hello@longshorestudio.co.uk directly.';
-        statusEl.classList.add('is-visible', 'err');
-      });
+        });
     });
   }
-})();
 
-if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, {threshold:.12});
-  document.querySelectorAll('.rise').forEach(s => { io.observe(s); });
-} else {
-  document.querySelectorAll('.rise').forEach(s => s.classList.add('in'));
-}
+  // ---------- scroll reveal — content is visible by default in HTML; this only ever adds a class on top ----------
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:.12});
+    document.querySelectorAll('.rise').forEach(s => { io.observe(s); });
+  } else {
+    document.querySelectorAll('.rise').forEach(s => s.classList.add('in'));
+  }
 
-// Smart Business — missed-call phone-thread demo.
-// Messages are fully visible in the HTML by default (no JS dependency).
-// This only ever ADDS a staggered reveal on top when motion is allowed —
-// it can never be the thing that makes the content appear.
-(function () {
-  const card = document.getElementById('sb-phone-demo');
-  const replayBtn = document.getElementById('sb-replay-btn');
-  if (!card) return;
-  const msgs = Array.from(card.querySelectorAll('.sb-msg'));
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // ---------- hero manifest — staggered append, safe-by-default ----------
+  function wireManifestReveal(containerId, rowSelector, replayBtnId){
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    const rows = Array.from(container.querySelectorAll(rowSelector));
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let pendingTimeouts = [];
 
-  function playReveal() {
-    if (reduceMotion || !msgs.length) return;
-    msgs.forEach((m) => m.classList.add('sb-pending'));
-    // Force a reflow so the pending (opacity:0) state actually paints before
-    // we start adding sb-in, otherwise the browser may coalesce both.
-    void card.offsetHeight;
-    msgs.forEach((m, i) => {
-      setTimeout(() => m.classList.add('sb-in'), i * 300);
+    function play(){
+      if (reduceMotion || !rows.length) return;
+      // Clear any timeouts from a still-running previous play() — otherwise
+      // rapid Replay clicks leave stray timeouts that re-fire out of
+      // sequence after the new sequence already looks finished.
+      pendingTimeouts.forEach(id => clearTimeout(id));
+      pendingTimeouts = [];
+      rows.forEach(r => r.classList.add('is-pending'));
+      void container.offsetHeight;
+      rows.forEach((r, i) => pendingTimeouts.push(setTimeout(() => r.classList.add('is-in'), i * 320)));
+      pendingTimeouts.push(setTimeout(() => rows.forEach(r => r.classList.add('is-in')), rows.length * 320 + 800));
+    }
+
+    if (!reduceMotion && 'IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { play(); io.unobserve(e.target); } });
+      }, { threshold: 0.4 });
+      io.observe(container);
+    }
+
+    const replayBtn = replayBtnId ? document.getElementById(replayBtnId) : null;
+    if (replayBtn) replayBtn.addEventListener('click', () => {
+      rows.forEach(r => r.classList.remove('is-in'));
+      void container.offsetHeight;
+      play();
+      if (window.trackEvent) window.trackEvent('demo_missed_call_replay', {});
     });
-    // Belt and suspenders: guarantee full visibility even if a timeout
-    // somehow fails to fire (tab throttling, etc.).
-    setTimeout(() => msgs.forEach((m) => m.classList.add('sb-in')), msgs.length * 300 + 800);
+  }
+  wireManifestReveal('hero-manifest', '.manifest-row', null);
+  wireManifestReveal('mc-manifest', '[data-mc-row]', 'mc-replay-btn');
+
+  // ---------- mobile nav drawer ----------
+  const navToggle = document.getElementById('nav-toggle');
+  const mobileNav = document.getElementById('mobile-nav');
+  if (navToggle && mobileNav) {
+    navToggle.addEventListener('click', () => {
+      const open = mobileNav.hidden;
+      mobileNav.hidden = !open;
+      navToggle.setAttribute('aria-expanded', String(open));
+    });
+    mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      mobileNav.hidden = true;
+      navToggle.setAttribute('aria-expanded', 'false');
+    }));
   }
 
-  if (!reduceMotion && 'IntersectionObserver' in window) {
-    const cardIo = new IntersectionObserver((entries) => {
-      entries.forEach((e) => { if (e.isIntersecting) { playReveal(); cardIo.unobserve(e.target); } });
-    }, { threshold: 0.4 });
-    cardIo.observe(card);
-  }
-  if (replayBtn) replayBtn.addEventListener('click', () => {
-    msgs.forEach((m) => m.classList.remove('sb-in'));
-    void card.offsetHeight;
-    playReveal();
-    if (window.trackEvent) window.trackEvent('sb_replay_click', {});
-  });
-})();
+  // ---------- keep the cookie banner and the assistant widget from
+  // competing for the same bottom-right corner on narrow viewports.
+  // ga-consent.js injects/removes `.cookie-bar` itself (untouched here) —
+  // this only ever hides the (also externally-injected) widget toggle
+  // while the banner is present, via CSS, and watches for the banner's
+  // own removal to bring the toggle back. Neither external script is
+  // modified. ----------
+  (function coordinateCookieBarAndWidget(){
+    function sync(){
+      document.body.classList.toggle('has-cookie-bar', !!document.querySelector('.cookie-bar'));
+    }
+    sync();
+    new MutationObserver(sync).observe(document.body, { childList: true });
+  })();
 
-// Smart Business — suggested-question chips open the real live assistant
-// widget (from public/assistant.js) and send the chosen question.
-(function () {
-  const chips = document.querySelectorAll('#sb-assistant-chips .sb-chip');
-  if (!chips.length) return;
+  // ---------- suggested-question chips open the real live assistant widget ----------
+  const chips = document.querySelectorAll('#demo-assistant-chips .demo-chip');
   chips.forEach((chip) => {
     chip.addEventListener('click', () => {
       const toggle = document.querySelector('.ls-assistant-toggle');
       const input = document.querySelector('.ls-assistant-input');
       const form = document.querySelector('.ls-assistant-form');
-      if (window.trackEvent) window.trackEvent('sb_chip_click', { question: chip.getAttribute('data-q') || '' });
+      if (window.trackEvent) window.trackEvent('demo_assistant_question', { question: chip.getAttribute('data-q') || '' });
       if (!toggle || !input || !form) return;
       if (toggle.getAttribute('aria-expanded') !== 'true') toggle.click();
       input.value = chip.getAttribute('data-q') || '';
@@ -693,5 +692,4 @@ if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-mot
         data-suggestions='["What does a standard website cost?","Do you do photography and drone work too?","How much is a full-day photography shoot in October?"]'
         defer></script>
 
-</body>
-</html>
+</body></html>
