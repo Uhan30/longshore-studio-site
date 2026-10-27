@@ -80,21 +80,30 @@ p{margin:0 0 1em;text-wrap:pretty}
 .phone-wrap{display:flex;justify-content:center}
 .phone{width:min(320px,100%);background:#0a120d;border:1px solid rgba(255,255,255,.14);border-radius:42px;padding:12px;box-shadow:0 40px 80px -30px rgba(0,0,0,.8),inset 0 0 0 1px rgba(255,255,255,.04);animation:float 7s ease-in-out infinite}
 @keyframes float{50%{transform:translateY(-8px)}}
-.screen{background:#f3f1ea;border-radius:32px;padding:20px 14px 18px;color:#18241c;min-height:470px;display:flex;flex-direction:column;gap:10px;font-size:.88rem;line-height:1.4}
-.screen .top{display:flex;justify-content:space-between;font-size:.72rem;color:#7b857e;padding:0 6px 8px;font-weight:600}
+.screen{background:#f3f1ea;border-radius:32px;padding:18px 12px 16px;color:#18241c;min-height:470px;display:flex;flex-direction:column;gap:12px;font-size:.88rem;line-height:1.4}
+.screen .top{display:flex;justify-content:space-between;font-size:.72rem;color:#7b857e;padding:0 6px 4px;font-weight:600}
+.sms-app{flex:1;display:flex;flex-direction:column;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.06);min-height:280px}
+.sms-header{background:linear-gradient(180deg,#faf8f2,#f0ede4);border-bottom:1px solid #e6e2d6;padding:12px 14px;text-align:center;font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#5a635c}
+.sms-thread{padding:16px 12px;display:flex;flex-direction:column;gap:8px;flex:1}
+.sms-meta{font-size:.68rem;color:#8a948d;font-weight:600;text-align:center;margin-bottom:4px}
+.bubble{max-width:92%;padding:12px 14px;border-radius:18px;box-shadow:0 1px 2px rgba(0,0,0,.05)}
+.bubble.summary{align-self:flex-start;background:#eef6f0;border:1px solid #d5e8db;border-bottom-left-radius:5px;color:#18241c;font-size:.9rem;line-height:1.45}
+.bubble.summary b{display:block;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--brass-d);margin-bottom:6px}
+.bubble.summary .tap{display:inline-block;margin-top:8px;font-weight:700;color:var(--pine);font-size:.82rem}
 .missed{display:flex;align-items:center;gap:10px;background:#fff;border-radius:14px;padding:11px 13px;box-shadow:0 1px 2px rgba(0,0,0,.06)}
 .missed i{width:28px;height:28px;border-radius:50%;background:#fde4e1;color:#c0392b;display:grid;place-items:center;font-style:normal;font-weight:700;font-size:.8rem}
 .missed b{display:block;font-size:.84rem}.missed small{color:#7b857e;font-size:.74rem}
-.bubble{max-width:86%;padding:10px 13px;border-radius:18px;box-shadow:0 1px 2px rgba(0,0,0,.05)}
 .bubble.out{align-self:flex-start;background:#fff;border-bottom-left-radius:5px}
 .bubble.in{align-self:flex-end;background:var(--pine);color:#fff;border-bottom-right-radius:5px}
 .bubble small{display:block;font-size:.68rem;color:#8a948d;margin-bottom:3px;font-weight:600}
 .saved{margin-top:auto;display:flex;gap:10px;align-items:center;background:#e4f4ea;color:#1c5a35;border-radius:14px;padding:12px 14px;font-weight:600;font-size:.84rem}
 .saved svg{width:20px;height:20px;flex:none}
-.screen > *{opacity:0;transform:translateY(10px);animation:pop .6s cubic-bezier(.2,.8,.2,1) forwards}
-.screen > .top{opacity:1;transform:none;animation:none}
-.screen > :nth-child(2){animation-delay:.4s}.screen > :nth-child(3){animation-delay:1.5s}.screen > :nth-child(4){animation-delay:3s}.screen > :nth-child(5){animation-delay:4.2s}
-@keyframes pop{to{opacity:1;transform:none}}
+/* Content visible on first paint (was opacity:0, which looked blank in screenshots) */
+.screen > *{opacity:1;transform:none}
+.screen > .sms-app,.screen > .saved{animation:pop .55s cubic-bezier(.2,.8,.2,1) both}
+.screen > .sms-app{animation-delay:.15s}
+.screen > .saved{animation-delay:.55s}
+@keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 .caption{margin-top:14px;text-align:center;font-size:.8rem;color:rgba(255,255,255,.5)}
 @media(min-width:900px){.hero{padding:88px 0 104px}.hero-grid{grid-template-columns:1.15fr .85fr;gap:72px}}
 
@@ -117,6 +126,16 @@ section{padding:84px 0}
 .step::before{counter-increment:s;content:"0" counter(s);font-family:var(--serif);font-size:2.4rem;font-weight:500;color:var(--brass);display:block;line-height:1;margin-bottom:14px}
 .step p{color:var(--muted);margin:0}
 @media(min-width:800px){.steps{grid-template-columns:repeat(3,1fr)}}
+
+
+/* loss calculator */
+.loss-calc{display:flex;flex-wrap:wrap;align-items:flex-end;gap:16px 24px;background:var(--white);border:1px solid var(--line);border-radius:var(--r-md);padding:20px 22px;margin:0 0 28px;box-shadow:var(--shadow)}
+.loss-label{flex:1 1 100%;margin:0;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--brass-d)}
+.loss-field{display:flex;flex-direction:column;gap:6px;font-size:.9rem;font-weight:600;color:var(--muted);min-width:160px}
+.loss-field input{font:inherit;font-weight:600;color:var(--text);padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--paper);width:140px;min-height:48px}
+.loss-field input:focus{outline:none;border-color:var(--moss);box-shadow:0 0 0 4px rgba(47,90,63,.15)}
+.loss-result{flex:1 1 220px;margin:0;font-size:1rem;line-height:1.45;color:var(--text);max-width:36em}
+.loss-result strong{color:var(--pine)}
 
 /* tiers */
 .tiers{display:grid;gap:20px}
@@ -196,19 +215,28 @@ footer{background:#08110c;color:rgba(255,255,255,.6);padding:34px 0;font-size:.9
 .footer-inner{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;justify-content:space-between}
 footer a{color:inherit}
 
-/* cookie bar (injected by ga-consent.js) */
-.cookie-bar{position:fixed;left:16px;right:16px;bottom:16px;z-index:2147483647;max-width:460px;margin:0 auto;background:var(--ink);color:var(--white);border:1px solid rgba(255,255,255,.14);border-radius:var(--r-md);padding:18px 20px;box-shadow:0 12px 32px rgba(0,0,0,.35);display:flex;flex-direction:column;gap:12px}
-.cookie-bar p{margin:0;font-size:.85rem;line-height:1.5;opacity:.9}
-.cookie-actions{display:flex;gap:10px}
+/* cookie bar — desktop corner chip; mobile slim bottom strip clear of hero CTAs */
+.cookie-bar{position:fixed;right:16px;bottom:16px;left:auto;z-index:2147483647;width:min(300px,calc(100vw - 32px));max-width:300px;margin:0;background:var(--ink);color:var(--white);border:1px solid rgba(255,255,255,.14);border-radius:var(--r-md);padding:12px 14px;box-shadow:0 12px 32px rgba(0,0,0,.35);display:flex;flex-direction:column;gap:10px}
+.cookie-bar p{margin:0;font-size:.78rem;line-height:1.4;opacity:.9}
+.cookie-actions{display:flex;gap:8px}
+.cookie-actions .btn{flex:1;justify-content:center;min-height:40px;padding:8px 12px;font-size:.85rem}
 .cookie-actions .btn-secondary{border-color:rgba(255,255,255,.3);color:var(--white)}
 body.has-cookie-bar .ls-assistant-toggle{display:none}
+@media(max-width:720px){
+  .cookie-bar{left:0;right:0;bottom:0;width:100%;max-width:none;border-radius:14px 14px 0 0;padding:10px 14px;flex-direction:row;align-items:center;gap:10px;box-shadow:0 -8px 28px rgba(0,0,0,.28)}
+  .cookie-bar p{flex:1;font-size:.72rem;line-height:1.35}
+  .cookie-actions{flex:0 0 auto;gap:6px}
+  .cookie-actions .btn{flex:0 0 auto;min-height:34px;padding:7px 12px;font-size:.78rem}
+  body.has-cookie-bar .hero{padding-bottom:88px}
+  body.has-cookie-bar .hero-actions{margin-bottom:8px}
+}
 
 /* reveal: content is always visible; JS only adds a gentle settle-in */
 .rise{transform:translateY(16px);transition:transform .7s cubic-bezier(.2,.8,.2,1)}
 .rise.in{transform:none}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-  .rise{transform:none}.screen > *{opacity:1;transform:none}
+  .rise{transform:none}.screen > .sms-app,.screen > .saved{animation:none}
 }
 
 /* who it's for */

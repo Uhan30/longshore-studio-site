@@ -77,8 +77,8 @@
   <div class="wrap hero-grid" style="padding-bottom:72px">
     <div>
       <p class="eyebrow">For East Lothian &amp; Edinburgh cleaning businesses</p>
-      <h1>Never miss a customer because your <em>hands were full.</em></h1>
-      <p class="lede">When you can't answer, your customer gets a text from you within seconds, or a friendly voice takes their details and sends you a summary. They wait for you instead of ringing the next business.</p>
+      <h1>Never miss a customer because you were <em>on a job.</em></h1>
+      <p class="lede">When you're on a job and can't answer, a friendly voice takes the caller's name and what they need, then texts you a summary. They wait for you instead of ringing the next firm.</p>
       <div class="demo-card">
         <p class="label">Try it now. Takes ten seconds.</p>
         <a class="demo-number" href="tel:+447576543811" data-cta="hero-demo-line">07576 543811</a>
@@ -93,15 +93,24 @@
     <div class="phone-wrap" aria-hidden="true">
       <div>
         <div class="phone">
-          <div class="screen">
+                    <div class="screen">
             <div class="top"><span>10:42</span><span>Example</span></div>
-            <div class="missed"><i>!</i><div><b>Missed call</b><small>Mrs Reid, Haddington</small></div></div>
-            <div class="bubble out"><small>Your business, sent automatically</small>Hi, sorry I missed your call, I'm on a clean. What do you need and where? I'll ring you back as soon as I'm free.</div>
-            <div class="bubble in"><small>Mrs Reid</small>Hi, I need a deep clean before we move out. 2 bed flat in Prestonpans.</div>
-            <div class="saved"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="8.5"/><path d="M6 10.5l2.8 2.8L14 7.5"/></svg>Enquiry saved. You have her number and the details.</div>
+            <div class="sms-app">
+              <div class="sms-header">Messages</div>
+              <div class="sms-thread">
+                <div class="sms-meta">Longshore · just now</div>
+                <div class="bubble summary">
+                  <b>New enquiry</b>
+                  Claire · Gullane<br>
+                  Fortnightly clean. Two-bed flat. Can you quote?<br>
+                  <span class="tap">Tap to call back</span>
+                </div>
+              </div>
+            </div>
+            <div class="saved"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="8.5"/><path d="M6 10.5l2.8 2.8L14 7.5"/></svg>Enquiry texted to you. Her number is in the message.</div>
           </div>
         </div>
-        <p class="caption">An example of the text. Call answering sends you a summary of the call. The wording is yours to change, whether you're mid-clean or on the way to the next one.</p>
+        <p class="caption">An example of the summary text you get when call answering takes an enquiry. The wording is yours to change.</p>
       </div>
     </div>
   </div>
@@ -114,8 +123,8 @@
   <div class="wrap">
     <div class="sec-head rise">
       <p class="eyebrow">Who it's for</p>
-      <h2>If you're with a customer, you can't be on the phone.</h2>
-      <p>It's made for owner-run businesses in East Lothian and Edinburgh. Trades are who I built it for first, and it suits anyone whose hands are busy when the phone rings.</p>
+      <h2>If you're on a clean, you can't be on the phone.</h2>
+      <p>It's made for owner-run cleaning businesses in East Lothian and Edinburgh who miss calls while they're mid-job.</p>
     </div>
     <ul class="who-grid">
       <li class="who-tile first rise"><h3>Cleaners</h3><p>Halfway through a deep clean, in rubber gloves.</p></li>
@@ -152,10 +161,17 @@
 
 <section id="prices" class="sand">
   <div class="wrap">
-    <div class="sec-head rise">
+        <div class="sec-head rise">
       <p class="eyebrow">Prices</p>
       <h2>Simple monthly prices. Free for 30 days.</h2>
       <p>The first five local businesses get the 30 days free and no setup fee. Prices are per month, with no contract.</p>
+    </div>
+    <div class="loss-calc rise" id="loss-calc">
+      <p class="loss-label">What one missed job a week costs you</p>
+      <label class="loss-field" for="avg-job">Average job value (£)
+        <input id="avg-job" type="number" inputmode="numeric" min="50" step="10" value="350" aria-describedby="loss-result">
+      </label>
+      <p class="loss-result" id="loss-result">One missed job a week at £350 is <strong>£18,200</strong> a year. Call answering is £59 a month (£708 a year).</p>
     </div>
     <div class="tiers">
       <article class="tier rise">
@@ -172,20 +188,7 @@
         <a class="btn btn-dark" href="#trial" data-cta="tier-textback">Start free for 30 days</a>
       </article>
       <article class="tier feature rise">
-        <span class="tag">Most popular</span>
-        <h3>Full package</h3>
-        <p class="for">For businesses who want every enquiry handled, day or night.</p>
-        <div class="price">£99<small> /month</small></div>
-        <p class="setup">£149 setup, free for founding customers</p>
-        <ul>
-          <li>Everything in Text-back</li>
-          <li>Assistant on your website that answers common questions and takes enquiry details, 24 hours a day</li>
-          <li>Review requests by text after each job</li>
-          <li>Call answering included</li>
-        </ul>
-        <a class="btn btn-primary" href="#trial" data-cta="tier-full">Start free for 30 days</a>
-      </article>
-      <article class="tier rise">
+        <span class="tag">Recommended</span>
         <h3>Call answering</h3>
         <p class="for">Every call picked up, a message taken, sent to you as a text.</p>
         <div class="price">£59<small> /month</small></div>
@@ -196,10 +199,23 @@
           <li>Includes text-back</li>
           <li>Callers get a friendly voice, not voicemail</li>
         </ul>
-        <a class="btn btn-dark" href="#trial" data-cta="tier-answering">Start free for 30 days</a>
+        <a class="btn btn-primary" href="#trial" data-cta="tier-answering">Start free for 30 days</a>
+      </article>
+      <article class="tier rise">
+        <h3>Full package</h3>
+        <p class="for">For businesses who want every enquiry handled, day or night.</p>
+        <div class="price">£99<small> /month</small></div>
+        <p class="setup">£149 setup, free for founding customers</p>
+        <ul>
+          <li>Everything in Call answering</li>
+          <li>Assistant on your website that answers common questions and takes enquiry details, 24 hours a day</li>
+          <li>Review requests by text after each job</li>
+          <li>Weekly count of calls caught</li>
+        </ul>
+        <a class="btn btn-dark" href="#trial" data-cta="tier-full">Start free for 30 days</a>
       </article>
     </div>
-    <p class="fine"><strong>Not sure?</strong> Start with Text-back. Moving up later is one email.</p>
+    <p class="fine"><strong>Not sure?</strong> Start with Call answering. Moving between plans is one email.</p>
   </div>
 </section>
 
@@ -235,7 +251,7 @@
   <div class="wrap about">
     <div class="rise">
       <p class="eyebrow">Who's behind it</p>
-      <p class="quote">I'm Ewan. I live in Gullane and build this for East Lothian trades and local businesses, because <em>most of you are too busy working to take every call.</em></p>
+      <p class="quote">I'm Ewan. I live in Gullane and build this for East Lothian cleaning firms and local businesses, because <em>most of you are too busy working to take every call.</em></p>
       <p style="color:var(--muted)">There's no call centre and no sales team. You deal with me by text or email, and a real person reads every message.</p>
     </div>
     <ul class="facts rise">

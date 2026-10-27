@@ -22,6 +22,18 @@
   sync();
   new MutationObserver(sync).observe(document.body,{childList:true});
 
+
+  var job=document.getElementById('avg-job'),out=document.getElementById('loss-result');
+  function fmt(n){return '£'+Math.round(n).toLocaleString('en-GB');}
+  function updateLoss(){
+    if(!job||!out)return;
+    var v=parseFloat(job.value);
+    if(!isFinite(v)||v<1){out.innerHTML='Enter an average job value to see what one miss a week costs over a year. Call answering is £59 a month (£708 a year).';return;}
+    var year=v*52;
+    out.innerHTML='One missed job a week at '+fmt(v)+' is <strong>'+fmt(year)+'</strong> a year. Call answering is £59 a month (£708 a year).';
+  }
+  if(job){job.addEventListener('input',updateLoss);job.addEventListener('change',updateLoss);updateLoss();}
+
   var form=document.getElementById('contact-form');
   if(!form)return;
   var submit=document.getElementById('contact-submit'),status=document.getElementById('form-status');
