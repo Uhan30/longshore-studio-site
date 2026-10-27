@@ -33,6 +33,8 @@
     var kind=fd.get('enquiry_type')||'Free trial';
     fd.set('subject','New enquiry ('+kind+') from the Longshore site');
     var attr=window.getAttribution?window.getAttribution():{};
+    var pm=location.pathname.match(/^\/r\/([a-z0-9-]+)/);
+    if(pm){attr.prospect=pm[1];}
     Object.keys(attr).forEach(function(k){fd.set(k,attr[k]);});
     fetch(form.action,{method:'POST',body:fd,headers:{'Accept':'application/json'}})
       .then(function(r){return r.json();})

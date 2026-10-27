@@ -6,6 +6,12 @@
   }
   window.trackEvent = trackEvent;
 
+  // Chat widget opened (the widget loads from another site, so listen for clicks on its launcher button).
+  document.addEventListener('click', function(e){
+    var t = e.target && e.target.closest ? e.target.closest('.ls-assistant-toggle') : null;
+    if (t && t.getAttribute('aria-expanded') !== 'true') { trackEvent('chat_open'); }
+  }, true); // capture phase: runs before the widget flips aria-expanded
+
   function wire(){
     document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
       a.addEventListener('click', function(){
