@@ -5,6 +5,7 @@ body.home {
   --accent-d: #7a5a14;
 }
 
+body.home { scroll-padding-top: 80px; }
 body.home h1 { font-size: clamp(2.4rem, 7vw, 4.4rem); }
 body.home h2 { font-size: clamp(1.85rem, 5vw, 2.9rem); }
 body.home h3 { font-size: 1.25rem; }
@@ -104,8 +105,9 @@ body.home .mobile-ring { display: none; }
   body.home .hero-actions { flex-direction: column; align-items: stretch; }
   body.home .hero-secondary { align-self: center; }
 
+  /* Hidden while the hero button is on screen, so the two calls don't stack. */
   body.home .mobile-ring {
-    display: flex;
+    display: none;
     position: fixed;
     left: 12px;
     right: 12px;
@@ -125,8 +127,9 @@ body.home .mobile-ring { display: none; }
     text-decoration: none;
     box-shadow: 0 12px 28px -10px rgba(0, 0, 0, .5);
   }
+  body.home .mobile-ring.is-visible { display: flex; }
   body.home .mobile-ring:hover { background: #d6b05d; color: var(--ink); }
-  body.home { padding-bottom: 84px; }
+  body.home { padding-bottom: 84px; scroll-padding-bottom: 96px; }
   body.home.has-cookie-bar .mobile-ring { bottom: 76px; }
   body.home.has-cookie-bar { padding-bottom: 156px; }
   body.home.has-cookie-bar .hero { padding-bottom: 0; }

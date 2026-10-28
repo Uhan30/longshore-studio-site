@@ -317,6 +317,24 @@
 </footer>
 
 <script src="site.js" defer></script>
+<script>
+(function () {
+  var bar = document.querySelector('.mobile-ring');
+  var trigger = document.querySelector('.hero-actions .btn-primary');
+  if (!bar || !trigger) return;
+  var mq = window.matchMedia('(max-width: 720px)');
+  function place() {
+    if (!mq.matches) { bar.classList.remove('is-visible'); return; }
+    bar.classList.toggle('is-visible', trigger.getBoundingClientRect().bottom < 0);
+  }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(place, { threshold: [0, 1] }).observe(trigger);
+  }
+  window.addEventListener('scroll', place, { passive: true });
+  window.addEventListener('resize', place);
+  place();
+})();
+</script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "3f6e231e567344dca19bb576eec2240a"}'></script>
 </body>
 </html>
