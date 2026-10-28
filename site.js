@@ -30,7 +30,7 @@
     var v=parseFloat(job.value);
     if(!isFinite(v)||v<1){out.innerHTML='Enter an average job value to see what one miss a week costs over a year. Call answering is £59 a month (£708 a year).';return;}
     var year=v*52;
-    out.innerHTML='One missed job a week at '+fmt(v)+' is <strong>'+fmt(year)+'</strong> a year. Call answering is £59 a month (£708 a year).';
+    out.innerHTML='For example, if one missed job a week is worth '+fmt(v)+', that\'s <strong>'+fmt(year)+'</strong> a year. Call answering is £59 a month (£708 a year).';
   }
   if(job){job.addEventListener('input',updateLoss);job.addEventListener('change',updateLoss);updateLoss();}
 
